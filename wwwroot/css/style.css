@@ -1,0 +1,399 @@
+﻿/*Style globalne*/
+body 
+{
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: slategrey;
+}
+
+a
+{
+    color: #474747;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+
+/*Głowne komponenty na stronie*/
+#container
+{
+    width: auto;
+    height: 100vh;
+    background-color: red;
+}
+
+#gamescreen
+{
+    position: relative;
+    width: 80%;
+    height: 972px;
+    float: left;
+    background-color: white;
+}
+
+#secondaryscreen
+{
+    position: relative;
+    width: 20%;
+    height: 972px;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+}
+
+#loginscreen
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+}
+
+#panel
+{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 90%;
+
+    background-color: #dedede;
+    border-radius: 40px;
+}
+
+#loginpanel
+{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 80%;
+    margin: auto;
+    margin-top: 100px;
+
+    background-color: #dedede;
+    border-radius: 40px;
+}
+
+#footer
+{
+    position: absolute;
+    top: 98%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    color: #474747;
+    font-family: Roboto;
+    font-size: 12px;
+}
+
+
+
+/*Nagłówki i akapity*/
+#gameheader
+{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #cf8f4e;
+    font-family: "Seymour One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+}
+
+#gameinfoheader
+{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #474747;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+#clickcountheader
+{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #474747;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+#panelmenuheader
+{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px; /* Odstęp między nagłówkiem a separatorem */
+    text-align: center;
+    font-size: 36px;
+    color: #474747;
+    font-family: Verdana;
+}
+    #panelmenuheader::after
+    {
+        content: "";
+        display: block;
+        width: 150px;
+        height: 10px;
+        background-color: #474747;
+        border-radius: 10px;
+        margin: 40px auto; /* Wyrównanie do środka i odstęp od tekstu */
+    }
+
+#loginpanelheader
+{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px; /* Odstęp między nagłówkiem a separatorem */
+    text-align: center;
+    font-size: 36px;
+    color: #474747;
+    font-family: Verdana;
+}
+
+    #loginpanelheader::after
+    {
+        content: "";
+        display: block;
+        width: 150px;
+        height: 10px;
+        background-color: #474747;
+        border-radius: 10px;
+        margin: 40px auto; /* Wyrównanie do środka i odstęp od tekstu */
+    }
+    
+#paneltext
+{
+    position: relative;
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #474747;
+}
+    #paneltext::after
+    {
+        content: "";
+        display: block;
+        width: 150px;
+        height: 10px;
+        background-color: #474747;
+        border-radius: 10px;
+        margin: 40px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
+    }
+
+#paneltext2
+{
+    position: relative;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #474747;
+}
+
+
+
+/*Przyciski i aktywne elementy*/
+#clicker
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 250px;
+    line-height: 250px;
+
+    background-color: #cf8f4e;
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px rgba(207, 143, 78, 0.5);
+
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 28px;
+    font-family: Roboto;
+    color: white;
+    text-align: center;
+    
+    cursor: pointer;
+    user-select: none;
+    transition: 0.1s;
+}
+    #clicker:hover
+    {
+        background-color: #be7e3d;
+        box-shadow: 0 0 0 10px rgba(207, 143, 78, 0.75);
+    }
+    #clicker:active
+    {
+        background-color: #df9f5f;
+        box-shadow: 0 0 0 8px rgba(207, 143, 78, 0.75);
+    }
+
+
+#loginsitebutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+
+    background-color: #474747;
+    color: #cf8f4e;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+    #loginsitebutton:hover
+    {
+        color: white;
+    }
+
+#registersitebutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+
+    background-color: #cf8f4e;
+    color: #474747;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+    #registersitebutton:hover
+    {
+        background-color: #474747;
+        color: white;
+    }
+
+#signinbutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #cf8f4e;
+    color: #474747;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    #signinbutton:hover
+    {
+        background-color: #474747;
+        color: white;
+    }
+
+#signupbutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    background-color: #474747;
+    color: #cf8f4e;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    #signupbutton:hover
+    {
+        color: white;
+    }
+
+#loginform
+{
+    position: relative;
+    display: flex;
+    width: 60%;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: #474747;
+}
+
+    #loginform input
+    {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 15px;
+        border: none;
+        border-radius: 14px;
+        box-sizing: border-box;
+        color: #474747;
+        font-size: 22px;
+        transition: border-color 0.3s;
+    }
+        #loginform input:focus
+        {
+            outline: solid;
+            outline-width: 2px;
+            outline-color: #474747;
+        }
+
+#passwordinput
+{
+    margin-top: 10px;
+}
+
+#passwordrecoverylink::after
+{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 10px;
+    background-color: #474747;
+    border-radius: 10px;
+    margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
+}
+
+#registernewaccountlink
+{
+    margin-top: 50px;
+}
