@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dane\\Moje projekty\\Programowanie\\C#\\Kliker\\Kliker.csproj",
+      "projectUniqueName": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\Kliker.csproj",
       "projectName": "Kliker",
-      "projectPath": "C:\\Dane\\Moje projekty\\Programowanie\\C#\\Kliker\\Kliker.csproj",
+      "projectPath": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\Kliker.csproj",
       "packagesPath": "C:\\Users\\Miłosz\\.nuget\\packages\\",
-      "outputPath": "C:\\Dane\\Moje projekty\\Programowanie\\C#\\Kliker\\obj\\",
+      "outputPath": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

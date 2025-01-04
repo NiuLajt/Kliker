@@ -11,7 +11,12 @@ a
     color: #474747;
     font-family: Roboto;
     font-size: 14px;
+    transition: 0.1s;
 }
+    a:hover
+    {
+        color: black;
+    }
 
 
 /*Głowne komponenty na stronie*/
@@ -60,8 +65,10 @@ a
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 600px;
+    width: 90%;
     height: 90%;
+    margin: auto;
+    margin-top: 45px;
 
     background-color: #dedede;
     border-radius: 40px;
@@ -357,7 +364,7 @@ a
     flex-direction: column;
     color: #474747;
 }
-
+   
     #loginform input
     {
         width: 100%;
