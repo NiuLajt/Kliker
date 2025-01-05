@@ -18,6 +18,51 @@ a
         color: black;
     }
 
+button
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form
+{
+    position: relative;
+    width: 60%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: #474747;
+}
+
+input
+{
+    width: 120%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    box-sizing: border-box;
+    color: #474747;
+    font-size: 22px;
+    transition: border-color 0.3s;
+}
+    input:focus
+    {
+        outline: solid;
+        outline-width: 2px;
+        outline-color: #474747;
+    }
+
 
 
 /*Głowne komponenty na stronie*/
@@ -28,97 +73,63 @@ a
     background-color: red;
 }
 
-#gamescreen
+.screen
 {
     position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#game_screen
+{
     width: 80%;
-    height: 972px;
     float: left;
-    background-color: white;
 }
 
-#secondaryscreen
+#secondary_screen
 {
-    position: relative;
     width: 20%;
-    height: 972px;
     float: left;
-    box-sizing: border-box;
-    padding: 10px;
-    background-color: white;
 }
 
-#loginscreen
+.panel
 {
     position: relative;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    background-color: white;
-}
-
-#registerscreen
-{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    background-color: white;
-}
-
-#panel
-{
-    position: relative;
+    margin: auto;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    background-color: #dedede;
+    border-radius: 40px;
+}
+
+#main_panel
+{
     width: 90%;
     height: 90%;
-    margin: auto;
     margin-top: 45px;
-
-    background-color: #dedede;
-    border-radius: 40px;
 }
 
-#loginpanel
+#login_panel
 {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
     width: 600px;
     height: 80%;
-    margin: auto;
     margin-top: 100px;
-
-    background-color: #dedede;
-    border-radius: 40px;
 }
 
-#registerpanel
+#register_panel
 {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
     width: 600px;
     height: 90%;
-    margin: auto;
     margin-top: 50px;
-    background-color: #dedede;
-    border-radius: 40px;
 }
 
-#footer
+.footer
 {
     position: absolute;
     top: 98%;
@@ -132,7 +143,7 @@ a
 
 
 /*Nagłówki i akapity*/
-#gameheader
+#main_header
 {
     position: absolute;
     top: 15%;
@@ -145,31 +156,40 @@ a
     font-size: 42px;
 }
 
-#gameinfoheader
+.separator::after /*pseudoklasa dodawana do obiektów z separatorem - takim pseudoelementem*/
+{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 10px;
+    background-color: #474747;
+    border-radius: 10px;
+    margin: 40px auto;
+}
+
+.game_header
 {
     position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #474747;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+#gameinfo_header
+{
     top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #474747;
-    font-family: Arial;
-    font-size: 16px;
 }
 
-#clickcountheader
+#clickcount_header
 {
-    position: absolute;
     top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #474747;
-    font-family: Arial;
-    font-size: 16px;
 }
 
-#panelmenuheader
+.panel_header
 {
     position: relative;
     margin-top: 40px;
@@ -179,120 +199,45 @@ a
     color: #474747;
     font-family: Verdana;
 }
-    #panelmenuheader::after
-    {
-        content: "";
-        display: block;
-        width: 150px;
-        height: 10px;
-        background-color: #474747;
-        border-radius: 10px;
-        margin: 40px auto;
-    }
-
-#registerpanelheader
-{
-    position: relative;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 36px;
-    color: #474747;
-    font-family: Verdana;
-}
-
-    #registerpanelheader::after
-    {
-        content: "";
-        display: block;
-        width: 150px;
-        height: 10px;
-        background-color: #474747;
-        border-radius: 10px;
-        margin: 40px auto;
-    }
-
-#loginpanelheader
-{
-    position: relative;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 36px;
-    color: #474747;
-    font-family: Verdana;
-}
-
-    #loginpanelheader::after
-    {
-        content: "";
-        display: block;
-        width: 150px;
-        height: 10px;
-        background-color: #474747;
-        border-radius: 10px;
-        margin: 40px auto;
-    }
     
-#paneltext
+.panel_text
 {
     position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    color: #474747;
+}
+
+#mainpanel_text1
+{
     margin-top: 60px;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 16px;
-    color: #474747;
 }
-    #paneltext::after
-    {
-        content: "";
-        display: block;
-        width: 150px;
-        height: 10px;
-        background-color: #474747;
-        border-radius: 10px;
-        margin: 40px auto 0px;
-    }
 
-#paneltext2
+#mainpanel_text2
 {
-    position: relative;
-    margin-top: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 16px;
-    color: #474747;
+    margin-top: 0px;
 }
 
-#registernewaccounttext
+#registernewaccount_text
 {
     margin-top: 50px;
-    color: #474747;
-    font-family: Roboto;
     font-size: 14px;
     transition: 0.1s;
 }
 
-#loginsitetext
+#loginsite_text
 {
-    position: relative;
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: #474747;
-    font-family: Roboto;
     font-size: 14px;
     transition: 0.1s;
 }
-   #loginsitetext::before
+   #loginsite_text::before /*separator*/
    {
         position: absolute;
-        top: -60px;
+        top: -50px;
         left: 50%;
         transform: translateX(-50%);
         content: "";
@@ -344,237 +289,62 @@ a
         box-shadow: 0 0 0 8px rgba(207, 143, 78, 0.75);
     }
 
-
-#loginsitebutton
+.mainrole_button
 {
-    position: relative;
-    width: 250px;
-    height: 60px;
-
-    background-color: #474747;
-    color: #cf8f4e;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-    #loginsitebutton:hover
-    {
-        color: white;
-    }
-
-#registersitebutton
-{
-    position: relative;
-    width: 250px;
-    height: 60px;
-    margin-top: 20px;
-
     background-color: #cf8f4e;
     color: #474747;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
 }
-    #registersitebutton:hover
+    .mainrole_button:hover
     {
         background-color: #474747;
         color: white;
     }
 
-#signinsitebutton
+.secondaryrole_button
 {
-    position: relative;
-    width: 250px;
-    height: 60px;
-    margin-top: 20px;
     background-color: #474747;
     color: #cf8f4e;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
 }
-    #signinsitebutton:hover
+    .secondaryrole_button:hover
     {
-        background-color: #474747;
+        background-color: #363636;
         color: white;
     }
 
-#signinbutton
+.main_page .secondaryrole_button
 {
-    position: relative;
-    width: 250px;
-    height: 60px;
     margin-top: 20px;
+}
+
+.login_page .mainrole_button
+{
+    margin-top: 30px;
     margin-bottom: 10px;
-    background-color: #cf8f4e;
-    color: #474747;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-    #signinbutton:hover
-    {
-        background-color: #474747;
-        color: white;
-    }
-
-#signupbutton
-{
-    position: relative;
-    width: 250px;
-    height: 60px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    background-color: #474747;
-    color: #cf8f4e;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-    #signupbutton:hover
-    {
-        color: white;
-    }
-
-#signupsitesignupbutton
-{
-    position: relative;
-    width: 250px;
-    height: 60px;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    background-color: #cf8f4e;
-    color: #474747;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-    #signupsitesignupbutton:hover
-    {
-        background-color: #474747;
-        color: white;
-    }
-
-#signupsitesigninbutton
-{
-    position: relative;
-    width: 250px;
-    height: 60px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    background-color: #474747;
-    color: #cf8f4e;
-    font-family: Verdana;
-    font-size: 20px;
-    font-weight: 800;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-    #signupsitesigninbutton:hover
-    {
-        color: white;
-    }
-
-#loginform
-{
-    position: relative;
-    display: flex;
-    width: 60%;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    color: #474747;
-}
-    #loginform input
-    {
-        width: 100%;
-        margin-bottom: 15px;
-        padding: 15px;
-        border: none;
-        border-radius: 14px;
-        box-sizing: border-box;
-        color: #474747;
-        font-size: 22px;
-        transition: border-color 0.3s;
-    }
-        #loginform input:focus
-        {
-            outline: solid;
-            outline-width: 2px;
-            outline-color: #474747;
-        }
-
-#usernameinput
-{
-    margin-bottom: 0px;
 }
 
-#registerform
+.login_page .secondaryrole_button
 {
-    position: relative;
-    display: flex;
-    width: 60%;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    color: #474747;
+    margin-bottom: 30px;
 }
-    #registerform input
-    {
-        width: 100%;
-        margin-bottom: 15px;
-        padding: 15px;
-        border: none;
-        border-radius: 14px;
-        box-sizing: border-box;
-        color: #474747;
-        font-size: 22px;
-        transition: border-color 0.3s;
-    }
-        #registerform input:focus
-        {
-            outline: solid;
-            outline-width: 2px;
-            outline-color: #474747;
-        }
 
-#passwordrecoverylink::after
+.register_page .mainrole_button
 {
-    content: "";
-    display: block;
-    width: 150px;
-    height: 10px;
-    background-color: #474747;
-    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+}
+
+.register_page .secondaryrole_button
+{
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.login_page #username_input
+{
+    margin-bottom: 15px;
+}
+
+#passwordrecovery_link::after
+{
     margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
 }
