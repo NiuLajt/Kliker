@@ -19,6 +19,7 @@ a
     }
 
 
+
 /*Głowne komponenty na stronie*/
 #container
 {
@@ -48,6 +49,16 @@ a
 }
 
 #loginscreen
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+}
+
+#registerscreen
 {
     position: relative;
     width: 100%;
@@ -87,6 +98,22 @@ a
     margin: auto;
     margin-top: 100px;
 
+    background-color: #dedede;
+    border-radius: 40px;
+}
+
+#registerpanel
+{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 90%;
+    margin: auto;
+    margin-top: 50px;
     background-color: #dedede;
     border-radius: 40px;
 }
@@ -146,7 +173,7 @@ a
 {
     position: relative;
     margin-top: 40px;
-    margin-bottom: 20px; /* Odstęp między nagłówkiem a separatorem */
+    margin-bottom: 20px;
     text-align: center;
     font-size: 36px;
     color: #474747;
@@ -160,14 +187,36 @@ a
         height: 10px;
         background-color: #474747;
         border-radius: 10px;
-        margin: 40px auto; /* Wyrównanie do środka i odstęp od tekstu */
+        margin: 40px auto;
+    }
+
+#registerpanelheader
+{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 36px;
+    color: #474747;
+    font-family: Verdana;
+}
+
+    #registerpanelheader::after
+    {
+        content: "";
+        display: block;
+        width: 150px;
+        height: 10px;
+        background-color: #474747;
+        border-radius: 10px;
+        margin: 40px auto;
     }
 
 #loginpanelheader
 {
     position: relative;
     margin-top: 40px;
-    margin-bottom: 20px; /* Odstęp między nagłówkiem a separatorem */
+    margin-bottom: 20px;
     text-align: center;
     font-size: 36px;
     color: #474747;
@@ -182,7 +231,7 @@ a
         height: 10px;
         background-color: #474747;
         border-radius: 10px;
-        margin: 40px auto; /* Wyrównanie do środka i odstęp od tekstu */
+        margin: 40px auto;
     }
     
 #paneltext
@@ -204,7 +253,7 @@ a
         height: 10px;
         background-color: #474747;
         border-radius: 10px;
-        margin: 40px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
+        margin: 40px auto 0px;
     }
 
 #paneltext2
@@ -218,6 +267,42 @@ a
     font-size: 16px;
     color: #474747;
 }
+
+#registernewaccounttext
+{
+    margin-top: 50px;
+    color: #474747;
+    font-family: Roboto;
+    font-size: 14px;
+    transition: 0.1s;
+}
+
+#loginsitetext
+{
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #474747;
+    font-family: Roboto;
+    font-size: 14px;
+    transition: 0.1s;
+}
+   #loginsitetext::before
+   {
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        display: block;
+        width: 150px;
+        height: 10px;
+        background-color: #474747;
+        border-radius: 10px;
+        margin: 0px auto 50px;
+   }
 
 
 
@@ -306,6 +391,28 @@ a
         color: white;
     }
 
+#signinsitebutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+    background-color: #474747;
+    color: #cf8f4e;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+    #signinsitebutton:hover
+    {
+        background-color: #474747;
+        color: white;
+    }
+
 #signinbutton
 {
     position: relative;
@@ -323,7 +430,6 @@ a
     cursor: pointer;
     transition: 0.2s;
 }
-
     #signinbutton:hover
     {
         background-color: #474747;
@@ -347,8 +453,52 @@ a
     cursor: pointer;
     transition: 0.2s;
 }
-
     #signupbutton:hover
+    {
+        color: white;
+    }
+
+#signupsitesignupbutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-color: #cf8f4e;
+    color: #474747;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+    #signupsitesignupbutton:hover
+    {
+        background-color: #474747;
+        color: white;
+    }
+
+#signupsitesigninbutton
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    background-color: #474747;
+    color: #cf8f4e;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+    #signupsitesigninbutton:hover
     {
         color: white;
     }
@@ -364,7 +514,6 @@ a
     flex-direction: column;
     color: #474747;
 }
-   
     #loginform input
     {
         width: 100%;
@@ -384,10 +533,40 @@ a
             outline-color: #474747;
         }
 
-#passwordinput
+#usernameinput
 {
-    margin-top: 10px;
+    margin-bottom: 0px;
 }
+
+#registerform
+{
+    position: relative;
+    display: flex;
+    width: 60%;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: #474747;
+}
+    #registerform input
+    {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 15px;
+        border: none;
+        border-radius: 14px;
+        box-sizing: border-box;
+        color: #474747;
+        font-size: 22px;
+        transition: border-color 0.3s;
+    }
+        #registerform input:focus
+        {
+            outline: solid;
+            outline-width: 2px;
+            outline-color: #474747;
+        }
 
 #passwordrecoverylink::after
 {
@@ -398,9 +577,4 @@ a
     background-color: #474747;
     border-radius: 10px;
     margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
-}
-
-#registernewaccountlink
-{
-    margin-top: 50px;
 }

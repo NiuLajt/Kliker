@@ -8,7 +8,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
         <title>Kliker - klikaj i wygrywaj</title>
-        <title></title>
     </head>
     
     <body>
@@ -19,10 +18,10 @@
                    <form id="loginform" action="/" method="post">
                        <h3 id="loginpanelheader">LOGOWANIE</h3>
                        <input id="usernameinput" type="text" name="username" placeholder="Wprowadź login..." required />
-                       <input id="passwordinput" type="password" name="username" placeholder="Wprowadź hasło..." required />
+                       <input id="passwordinput" type="password" name="password" placeholder="Wprowadź hasło..." required />
                        <button type="submit" id="signinbutton" class="mainrolebutton">ZALOGUJ</button>
                        <a id="passwordrecoverylink" href="error.html">Nie pamiętam hasła (nic z tego, ta usługa nie działa)</a>
-                       <a id="registernewaccountlink" href="register.html">Nie masz konta?</a>
+                       <span id="registernewaccounttext">Nie masz konta?</span>
                        <button id="signupbutton" class="secondaryrolebutton">REJESTRACJA</button>
                        <a id="backtomainsitelink" href="index.html">Wróć na stronę główną</a>
                    </form>
@@ -30,6 +29,7 @@
 
                 <div id="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
             </div>
+
         </div>
     </body>
 </html>
