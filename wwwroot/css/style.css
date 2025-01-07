@@ -1,7 +1,5 @@
 ﻿/*Style globalne*/
-
-/*gama kolorów*/
-:root
+:root /*gama kolorów*/
 {
     --background_panel_gray: #dedede;
     --content_gray: #474747;
