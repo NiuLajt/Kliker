@@ -1,14 +1,23 @@
 ﻿/*Style globalne*/
+
+/*gama kolorów*/
+:root
+{
+    --background_panel_gray: #dedede;
+    --content_gray: #474747;
+    --accent_orange: #cf8f4e;
+}
+
 body 
 {
     margin: 0px !important;
     padding: 0px !important;
-    background-color: slategrey;
+    background-color: green;
 }
 
 a
 {
-    color: #474747;
+    color: var(--content_gray);
     font-family: Roboto;
     font-size: 14px;
     transition: 0.1s;
@@ -41,7 +50,7 @@ form
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    color: #474747;
+    color: var(--content_gray);
 }
 
 input
@@ -52,7 +61,7 @@ input
     border: none;
     border-radius: 14px;
     box-sizing: border-box;
-    color: #474747;
+    color: var(--content_gray);
     font-size: 22px;
     transition: border-color 0.3s;
 }
@@ -60,7 +69,7 @@ input
     {
         outline: solid;
         outline-width: 2px;
-        outline-color: #474747;
+        outline-color: var(--content_gray);
     }
 
 
@@ -104,7 +113,7 @@ input
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: #dedede;
+    background-color: var(--background_panel_gray);
     border-radius: 40px;
 }
 
@@ -135,7 +144,7 @@ input
     top: 98%;
     left: 14%;
     transform: translate(-50%, -50%);
-    color: #474747;
+    color: var(--content_gray);
     font-family: Roboto;
     font-size: 12px;
 }
@@ -149,7 +158,7 @@ input
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #cf8f4e;
+    color: var(--accent_orange);
     font-family: "Seymour One", serif;
     font-weight: 400;
     font-style: normal;
@@ -162,7 +171,7 @@ input
     display: block;
     width: 150px;
     height: 10px;
-    background-color: #474747;
+    background-color: var(--content_gray);
     border-radius: 10px;
     margin: 40px auto;
 }
@@ -172,7 +181,7 @@ input
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #474747;
+    color: var(--content_gray);
     font-family: Arial;
     font-size: 16px;
 }
@@ -196,10 +205,10 @@ input
     margin-bottom: 20px;
     text-align: center;
     font-size: 36px;
-    color: #474747;
+    color: var(--content_gray);
     font-family: Verdana;
 }
-    
+
 .panel_text
 {
     position: relative;
@@ -208,7 +217,7 @@ input
     text-align: center;
     font-family: Roboto;
     font-size: 16px;
-    color: #474747;
+    color: var(--content_gray);
 }
 
 #mainpanel_text1
@@ -234,8 +243,8 @@ input
     font-size: 14px;
     transition: 0.1s;
 }
-   #loginsite_text::before /*separator*/
-   {
+    #loginsite_text::before /*separator*/
+    {
         position: absolute;
         top: -50px;
         left: 50%;
@@ -244,10 +253,10 @@ input
         display: block;
         width: 150px;
         height: 10px;
-        background-color: #474747;
+        background-color: var(--content_gray);
         border-radius: 10px;
         margin: 0px auto 50px;
-   }
+    }
 
 
 
@@ -262,7 +271,7 @@ input
     width: 250px;
     line-height: 250px;
 
-    background-color: #cf8f4e;
+    background-color: var(--accent_orange);
     border-radius: 50%;
     box-shadow: 0 0 0 15px rgba(207, 143, 78, 0.5);
 
@@ -291,23 +300,23 @@ input
 
 .mainrole_button
 {
-    background-color: #cf8f4e;
-    color: #474747;
+    background-color: var(--accent_orange);
+    color: var(--content_gray);
 }
     .mainrole_button:hover
     {
-        background-color: #474747;
+        background-color: var(--content_gray);
         color: white;
     }
 
 .secondaryrole_button
 {
-    background-color: #474747;
-    color: #cf8f4e;
+    background-color: var(--content_gray);
+    color: var(--accent_orange);
 }
     .secondaryrole_button:hover
     {
-        background-color: #363636;
+        background-color: #323232;
         color: white;
     }
 
