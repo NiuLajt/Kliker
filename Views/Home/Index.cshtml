@@ -1,8 +1,41 @@
 ﻿@{
     var filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "wwwroot", "index.html");
-    var fileContent = System.IO.File.ReadAllText(filePath);
+    ViewData["Title"] = "Kliker - klikaj i wygrywaj";
 }
 
 <div class="text-center">
-    @Html.Raw(fileContent);
+        <div id="container">
+
+            <div id="game_screen" class="screen">
+                <h1 id="main_header">Kliker :D</h1>
+                <h3 id="gameinfo_header" class="game_header">Klikaj w poniższy przycisk, aby zdobywać punkty. Możesz grać jako gość, ale do zapisu postępów wymagana jest rejestracja konta.</h3>
+                <div id="clicker">KLIKNIJ!</div>
+                <h3 id="clickcount_header" class="game_header">Wyklikano: (NA RAZIE NIE DZIAŁA)</h3>
+                <div id="main_footer" class="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
+            </div>
+
+            <div id="secondary_screen" class="screen">
+                <div id="main_panel" class="panel">
+                    <h3 id="panelmenu_header" class="panel_header separator">MENU</h3>
+                    <button id="login_button" class="mainrole_button">LOGOWANIE</button>
+                    <button id="register_button" class="secondaryrole_button">REJESTRACJA</button>
+                    <p id="mainpanel_text1" class="panel_text separator">
+                        Gra umożliwia urozmaicenie
+                        rozgrywki poprzez
+                        kupowanie ulepszeń i
+                        pozwala na zapis postępu.
+                        Musisz mieć konto i logować się na nie,
+                        jeśli chcesz w pełni korzystać
+                        z funkcjonalności klikera.
+                    </p>
+                    <p id="mainpanel_text2" class="panel_text">
+                        Zalogowani użytkownicy widzą
+                        w tym miejscu inny panel,
+                        możesz nadal grać jako gość,
+                        chociaż pewnie będziesz żałować :)
+                    </p>
+                </div>
+            </div>
+
+        </div>
 </div>

@@ -1,8 +1,27 @@
 ﻿@{
     var filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "wwwroot", "login.html");
-    var fileContent = System.IO.File.ReadAllText(filePath);
+    ViewData["Title"] = "Kliker - klikaj i wygrywaj";
 }
 
 <div class="text-center">
-    @Html.Raw(fileContent);
+    <div id="container">
+
+        <div id="login_screen" class="screen">
+            <div id="login_panel" class="panel">
+                <form id="login_form" action="/" method="post">
+                    <h3 id="loginpanel_header" class="panel_header separator">LOGOWANIE</h3>
+                    <input id="username_input" type="text" name="username" placeholder="Wprowadź login..." required />
+                    <input id="password_input" type="password" name="password" placeholder="Wprowadź hasło..." required />
+                    <button type="submit" id="signin_button" class="mainrole_button">ZALOGUJ</button>
+                    <a id="passwordrecovery_link" href="error.html" class="separator">Nie pamiętam hasła (nic z tego, ta usługa nie działa)</a>
+                    <p id="registernewaccount_text" class="panel_text">Nie masz konta?</p>
+                    <button id="register_button" class="secondaryrole_button">REJESTRACJA</button>
+                    <a id="home_link" href="index.html">Wróć na stronę główną</a>
+                </form>
+            </div>
+
+            <div id="login_footer" class="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
+        </div>
+
+    </div>
 </div>

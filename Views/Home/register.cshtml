@@ -1,8 +1,27 @@
 ﻿@{
     var filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "wwwroot", "register.html");
-    var fileContent = System.IO.File.ReadAllText(filePath);
+    ViewData["Title"] = "Kliker - klikaj i wygrywaj";
 }
 
 <div class="text-center">
-    @Html.Raw(fileContent);
+    <div id="container">
+
+        <div id="register_screen" class="screen">
+            <div id="register_panel" class="panel">
+                <form id="register_form" action="/" method="post">
+                    <h3 id="registerpanel_header" class="panel_header separator">REJESTRACJA</h3>
+                    <input id="username_input" type="text" name="username" placeholder="Wprowadź login..." required />
+                    <input id="email_input" type="text" name="email" placeholder="Wprowadź adres e-mail..." required />
+                    <input id="password_input" type="password" name="password" placeholder="Wprowadź hasło..." required />
+                    <input id="passwordconfirm_input" type="password" name="passwordconfirm" placeholder="Wprowadź hasło ponownie..." required />
+                    <button id="signup_button" type="submit" class="mainrole_button">ZAREJESTRUJ KONTO</button>
+                    <p id="loginsite_text" class="panel_text">Masz juz konto?</p>
+                    <button id="login_button" class="secondaryrole_button">ZALOGUJ SIE</button>
+                    <a id="home_link" href="index.html">Wróć na stronę główną</a>
+                </form>
+            </div>
+
+            <div id="register_footer" class="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
+        </div>
+    </div>
 </div>
