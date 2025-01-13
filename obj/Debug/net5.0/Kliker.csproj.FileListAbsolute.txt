@@ -20,9 +20,6 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Klik
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Kliker.TagHelpers.input.cache
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Kliker.TagHelpers.output.cache
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Kliker.RazorCoreGenerate.cache
-C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Home\login.cshtml.g.cs
-C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Home\register.cshtml.g.cs
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -44,3 +41,6 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Klik
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Kliker.genruntimeconfig.cache
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\ref\Kliker.dll
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Kliker.csproj.Up2Date
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Home\login.cshtml.g.cs
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net5.0\Razor\Views\Home\register.cshtml.g.cs

@@ -1,0 +1,357 @@
+﻿/*Style globalne*/
+:root /*gama kolorów*/
+{
+    --background_panel_gray: #dedede;
+    --content_gray: #474747;
+    --accent_orange: #cf8f4e;
+}
+
+body 
+{
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: green;
+}
+
+a
+{
+    color: var(--content_gray);
+    font-family: Roboto;
+    font-size: 14px;
+    transition: 0.1s;
+}
+    a:hover
+    {
+        color: black;
+    }
+
+button
+{
+    position: relative;
+    width: 250px;
+    height: 60px;
+    font-family: Verdana;
+    font-size: 20px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form
+{
+    position: relative;
+    width: 60%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: var(--content_gray);
+}
+
+input
+{
+    width: 120%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    box-sizing: border-box;
+    color: var(--content_gray);
+    font-size: 22px;
+    transition: border-color 0.3s;
+}
+    input:focus
+    {
+        outline: solid;
+        outline-width: 2px;
+        outline-color: var(--content_gray);
+    }
+
+
+
+/*Głowne komponenty na stronie*/
+#container
+{
+    width: auto;
+    height: 100vh;
+    background-color: red;
+}
+
+.screen
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#game_screen
+{
+    width: 80%;
+    float: left;
+}
+
+#secondary_screen
+{
+    width: 20%;
+    float: left;
+}
+
+.panel
+{
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background_panel_gray);
+    border-radius: 40px;
+}
+
+#main_panel
+{
+    width: 90%;
+    height: 90%;
+    margin-top: 45px;
+}
+
+#login_panel
+{
+    width: 600px;
+    height: 80%;
+    margin-top: 100px;
+}
+
+#register_panel
+{
+    width: 600px;
+    height: 90%;
+    margin-top: 50px;
+}
+
+.footer
+{
+    position: absolute;
+    top: 98%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    color: var(--content_gray);
+    font-family: Roboto;
+    font-size: 12px;
+}
+
+
+
+/*Nagłówki i akapity*/
+#main_header
+{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent_orange);
+    font-family: "Seymour One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+}
+
+.separator::after /*pseudoklasa dodawana do obiektów z separatorem - takim pseudoelementem*/
+{
+    content: "";
+    display: block;
+    width: 150px;
+    height: 10px;
+    background-color: var(--content_gray);
+    border-radius: 10px;
+    margin: 40px auto;
+}
+
+.game_header
+{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--content_gray);
+    font-family: Arial;
+    font-size: 16px;
+}
+
+#gameinfo_header
+{
+    top: 25%;
+    left: 50%;
+}
+
+#clickcount_header
+{
+    top: 75%;
+    left: 50%;
+}
+
+.panel_header
+{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 36px;
+    color: var(--content_gray);
+    font-family: Verdana;
+}
+
+.panel_text
+{
+    position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16px;
+    color: var(--content_gray);
+}
+
+#mainpanel_text1
+{
+    margin-top: 60px;
+}
+
+#mainpanel_text2
+{
+    margin-top: 0px;
+}
+
+#registernewaccount_text
+{
+    margin-top: 50px;
+    font-size: 14px;
+    transition: 0.1s;
+}
+
+#loginsite_text
+{
+    margin-top: 20px;
+    font-size: 14px;
+    transition: 0.1s;
+}
+    #loginsite_text::before /*separator*/
+    {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        display: block;
+        width: 150px;
+        height: 10px;
+        background-color: var(--content_gray);
+        border-radius: 10px;
+        margin: 0px auto 50px;
+    }
+
+
+
+/*Przyciski i aktywne elementy*/
+#clicker
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 250px;
+    line-height: 250px;
+
+    background-color: var(--accent_orange);
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px rgba(207, 143, 78, 0.5);
+
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 28px;
+    font-family: Roboto;
+    color: white;
+    text-align: center;
+    
+    cursor: pointer;
+    user-select: none;
+    transition: 0.1s;
+}
+    #clicker:hover
+    {
+        background-color: #be7e3d;
+        box-shadow: 0 0 0 10px rgba(207, 143, 78, 0.75);
+    }
+    #clicker:active
+    {
+        background-color: #df9f5f;
+        box-shadow: 0 0 0 8px rgba(207, 143, 78, 0.75);
+    }
+
+.mainrole_button
+{
+    background-color: var(--accent_orange);
+    color: var(--content_gray);
+}
+    .mainrole_button:hover
+    {
+        background-color: var(--content_gray);
+        color: white;
+    }
+
+.secondaryrole_button
+{
+    background-color: var(--content_gray);
+    color: var(--accent_orange);
+}
+    .secondaryrole_button:hover
+    {
+        background-color: #323232;
+        color: white;
+    }
+
+.main_page .secondaryrole_button
+{
+    margin-top: 20px;
+}
+
+.login_page .mainrole_button
+{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.login_page .secondaryrole_button
+{
+    margin-bottom: 30px;
+}
+
+.register_page .mainrole_button
+{
+    margin-top: 30px;
+    margin-bottom: 90px;
+}
+
+.register_page .secondaryrole_button
+{
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.login_page #username_input
+{
+    margin-bottom: 15px;
+}
+
+#passwordrecovery_link::after
+{
+    margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
+}
