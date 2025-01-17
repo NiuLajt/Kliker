@@ -1,7 +1,15 @@
-﻿document.getElementById("login_button").addEventListener("click", function () {
-    window.location.href = "/login.html";
-});
+﻿document.addEventListener("DOMContentLoaded", function () {
+    const loginButton = document.getElementById("login_button");
+    if (loginButton) {
+        loginButton.addEventListener("click", function () {
+            window.location.href = "/Home/Login";
+        });
+    }
 
-document.getElementById("register_button").addEventListener("click", function () {
-    window.location.href = "/register.html";
+    const registerButton = document.getElementById("register_button");
+    if (registerButton) {
+        registerButton.addEventListener("click", function () {
+            window.location.href = "/Home/Register";
+        });
+    }
 });
