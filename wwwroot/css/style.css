@@ -94,6 +94,14 @@ input
 {
     width: 80%;
     float: left;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 #secondary_screen
@@ -152,10 +160,7 @@ input
 /*Nagłówki i akapity*/
 #main_header
 {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 150px;
     color: var(--accent_orange);
     font-family: "Seymour One", serif;
     font-weight: 400;
@@ -176,9 +181,6 @@ input
 
 .game_header
 {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    text-align: center;
     color: var(--content_gray);
     font-family: Arial;
     font-size: 16px;
@@ -186,14 +188,13 @@ input
 
 #gameinfo_header
 {
-    top: 25%;
-    left: 50%;
+    margin-top: 10px;
+    width: 50%;
 }
 
 #clickcount_header
 {
-    top: 75%;
-    left: 50%;
+    margin-top: 100px;
 }
 
 .panel_header
@@ -261,25 +262,20 @@ input
 /*Przyciski i aktywne elementy*/
 #clicker
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 250px;
     width: 250px;
+    margin-top: 75px;
     line-height: 250px;
 
     background-color: var(--accent_orange);
     border-radius: 50%;
     box-shadow: 0 0 0 15px rgba(207, 143, 78, 0.5);
 
-    text-align: center;
     font-weight: bold;
     border-radius: 50%;
     font-size: 28px;
     font-family: Roboto;
     color: white;
-    text-align: center;
     
     cursor: pointer;
     user-select: none;
@@ -355,3 +351,16 @@ input
 {
     margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
 }
+
+#clickcounter
+{
+    font-size: 38px;
+    color: var(--content_gray);
+    margin-top: 20px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+    #clickcounter.clicked
+    {
+        transform: scale(1.25);
+        color: var(--accent_orange);
+    }    
