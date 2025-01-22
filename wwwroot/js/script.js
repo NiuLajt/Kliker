@@ -32,6 +32,7 @@ function handleClicking() {
             requestAnimationFrame(function () {
                 setTimeout(function () { clickCountDisplay.classList.remove('clicked'); animationInProgress = false; }, 300);
             });
+
         }
 
         localStorage.setItem("clickCount", clickCount);
