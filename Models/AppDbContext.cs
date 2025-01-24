@@ -14,8 +14,7 @@ public partial class AppDbContext : DbContext
         _configuration = configuration;
     }
 
-    public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration)
-        : base(options)
+    public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration): base(options)
     {
         _configuration = configuration;
     }
@@ -24,13 +23,15 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<PlayersAchievement> PlayersAchievments { get; set; }
 
+    public virtual DbSet<PlayersUpgrade> PlayersUpgrades { get; set; }
+
     public virtual DbSet<Upgrade> Upgrades { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if(!optionsBuilder.IsConfigured)
+        if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseNpgsql(_configuration.GetConnectionString("DefaultConnection"));
         }
@@ -68,15 +69,36 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.AchievementId).HasColumnName("achievementID");
             entity.Property(e => e.DateIfBeingAchieved).HasColumnName("dateIfBeingAchieved");
 
-            entity.HasOne(d => d.Achievement).WithMany(p => p.PlayersAchievments)
+            entity.HasOne(d => d.Achievement).WithMany(p => p.PlayersAchievements)
                 .HasForeignKey(d => d.AchievementId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Foreign Key for achievements");
 
-            entity.HasOne(d => d.Player).WithOne(p => p.PlayersAchievement)
-                .HasForeignKey<PlayersAchievement>(d => d.PlayerId)
+            entity.HasOne(d => d.Player).WithMany(p => p.PlayersAchievements)
+                .HasForeignKey(d => d.PlayerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Foreign Key for users");
+        });
+
+        modelBuilder.Entity<PlayersUpgrade>(entity =>
+        {
+            entity.HasKey(e => new { e.PlayerId, e.UpgradeId }).HasName("players&upgrades_pkey");
+
+            entity.ToTable("players&upgrades", tb => tb.HasComment("Tabela pomocnicza zawierająca informacje o odblokowaniu ulepszeń przez graczy. Każdy rekord to reprezentacja odblokowania ulepszenia o konkretnym ID przez gracza o konkretnym ID."));
+
+            entity.Property(e => e.PlayerId).HasColumnName("playerID");
+            entity.Property(e => e.UpgradeId).HasColumnName("upgradeID");
+            entity.Property(e => e.DateOfBeingUpgraded).HasColumnName("dateOfBeingUpgraded");
+
+            entity.HasOne(d => d.Player).WithMany(p => p.PlayersUpgrades)
+                .HasForeignKey(d => d.PlayerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("PlayerID foreign key");
+
+            entity.HasOne(d => d.Upgrade).WithMany(p => p.PlayersUpgrades)
+                .HasForeignKey(d => d.UpgradeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("UpgradeID foreign key");
         });
 
         modelBuilder.Entity<Upgrade>(entity =>

@@ -20,15 +20,16 @@ public partial class User
 
     public bool Banned { get; set; }
 
-    public virtual PlayersAchievement PlayersAchievement { get; set; }
+    public virtual ICollection<PlayersAchievement> PlayersAchievements { get; set; } = [];
 
-    public User(string username, string email, string passwordHash, PlayersAchievement playersAchievment)
+    public virtual ICollection<PlayersUpgrade> PlayersUpgrades { get; set; } = [];
+
+    public User(string username, string email, string passwordHash)
     {
         Username = username;
         Email = email;
         PasswordHash = passwordHash;
         Lvl = 0;
         Banned = false;
-        PlayersAchievement = playersAchievment;
     }
 }
