@@ -116,9 +116,7 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\Klik
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\Kliker.sourcelink.json
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\scopedcss\bundle\Kliker.styles.css
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\cqm59q6kb0-hdhjllpya4.gz
-C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\9jtf5u0e0z-39wftkqxhn.gz
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\yyhs0aslfx-61n19gt1b8.gz
-C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\zujt0g5emg-huu2ocimya.gz
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\ouumj524oj-9n0ta5ieki.gz
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\ohcbjfiuwr-0i1dcxd824.gz
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\ts8re5mua5-vxs71z90fw.gz
@@ -167,3 +165,5 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\refi
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\Kliker.pdb
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\Kliker.genruntimeconfig.cache
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\ref\Kliker.dll
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\9jtf5u0e0z-6maxw4h7sb.gz
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\zujt0g5emg-fjg5dy63lg.gz

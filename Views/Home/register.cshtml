@@ -3,17 +3,19 @@
     ViewData["Title"] = "Kliker - klikaj i wygrywaj";
 }
 
+@model Kliker.Models.RegisterViewModel
+
 <div class="text-center register_page">
     <div id="container">
 
         <div id="register_screen" class="screen">
             <div id="register_panel" class="panel">
-                <form id="register_form" action="/" method="post">
+                <form id="register_form" asp-action="Register" method="post" autocomplete="off">
                     <h3 id="registerpanel_header" class="panel_header separator">REJESTRACJA</h3>
-                    <input id="username_input" type="text" name="username" placeholder="Wprowadź login..." required />
-                    <input id="email_input" type="text" name="email" placeholder="Wprowadź adres e-mail..." required />
-                    <input id="password_input" type="password" name="password" placeholder="Wprowadź hasło..." required />
-                    <input id="passwordconfirm_input" type="password" name="passwordconfirm" placeholder="Wprowadź hasło ponownie..." required />
+                    <input asp-for="Username" id="username_input" type="text" placeholder="Wprowadź login..." />
+                    <input asp-for="Mail" id="email_input" type="text" placeholder="Wprowadź adres e-mail..." />
+                    <input asp-for="Password" id="password_input" type="password" placeholder="Wprowadź hasło..." />
+                    <input asp-for="ConfirmPassword" id="passwordconfirm_input" type="password" placeholder="Wprowadź hasło ponownie..." />
                     <button id="signup_button" type="submit" class="mainrole_button">ZAREJESTRUJ</button>
                     <p id="loginsite_text" class="panel_text">Masz juz konto?</p>
                     <button id="login_button" class="secondaryrole_button">ZALOGUJ SIE</button>
@@ -23,5 +25,14 @@
 
             <div id="register_footer" class="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
         </div>
+    </div>
+</div>
+
+<!-- Dialogue window (modal) used for form-inputs related errors and user interaction -->
+<div id="errorModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <p id="modalMessage"></p>
+        <button id="okModalButton">Ok</button>
     </div>
 </div>
