@@ -20,6 +20,7 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\bootstrap
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\js\register.js
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
@@ -37,6 +38,7 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\wwwroot\js\script.js
 wwwroot\css\site.css
 wwwroot\css\style.css
 wwwroot\favicon.ico
+wwwroot\js\register.js
 wwwroot\js\script.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

@@ -54,6 +54,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\register.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Kliker</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Kliker</BasePath>
+      <RelativePath>js/register.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7nrb6g4u1h</Fingerprint>
+      <Integrity>syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\register.js'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\script.js'))">
       <SourceType>Package</SourceType>
       <SourceId>Kliker</SourceId>
@@ -66,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fjg5dy63lg</Fingerprint>
-      <Integrity>+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc=</Integrity>
+      <Fingerprint>ibfdq7aftd</Fingerprint>
+      <Integrity>MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\script.js'))</OriginalItemSpec>

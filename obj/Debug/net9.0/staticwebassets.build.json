@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R+jeAPG0x6U04tj4xizDfKdZrdwKSV6EhctYWHhoF2o=",
+  "Hash": "OiXNQXno472iMqYbZzXRoqgKCAq40xotRM35+ujDYCE=",
   "Source": "Kliker",
   "BasePath": "_content/Kliker",
   "Mode": "Default",
@@ -479,6 +479,27 @@
       "OriginalItemSpec": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
+      "Identity": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\omy8bngysx-7nrb6g4u1h.gz",
+      "SourceId": "Kliker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Kliker",
+      "RelativePath": "js/register#[.{fingerprint=7nrb6g4u1h}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\register.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "cjuysvr9gm",
+      "Integrity": "6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\register.js"
+    },
+    {
       "Identity": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\ouumj524oj-9n0ta5ieki.gz",
       "SourceId": "Kliker",
       "SourceType": "Discovered",
@@ -752,12 +773,12 @@
       "OriginalItemSpec": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-fjg5dy63lg.gz",
+      "Identity": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-ibfdq7aftd.gz",
       "SourceId": "Kliker",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Kliker",
-      "RelativePath": "js/script#[.{fingerprint=fjg5dy63lg}]?.js.gz",
+      "RelativePath": "js/script#[.{fingerprint=ibfdq7aftd}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -766,8 +787,8 @@
       "RelatedAsset": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\script.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "xrmpn5insb",
-      "Integrity": "jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc=",
+      "Fingerprint": "vuwih773yd",
+      "Integrity": "19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\script.js"
@@ -836,6 +857,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\register.js",
+      "SourceId": "Kliker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\",
+      "BasePath": "_content/Kliker",
+      "RelativePath": "js/register#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7nrb6g4u1h",
+      "Integrity": "syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\register.js"
+    },
+    {
       "Identity": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\script.js",
       "SourceId": "Kliker",
       "SourceType": "Discovered",
@@ -850,8 +892,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fjg5dy63lg",
-      "Integrity": "+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc=",
+      "Fingerprint": "ibfdq7aftd",
+      "Integrity": "MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\script.js"
@@ -1874,7 +1916,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:45:34 GMT"
+          "Value": "Fri, 28 Feb 2025 20:24:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1935,7 +1977,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:45:34 GMT"
+          "Value": "Fri, 28 Feb 2025 20:24:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1980,7 +2022,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:45:34 GMT"
+          "Value": "Fri, 28 Feb 2025 20:24:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2035,7 +2077,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:45:34 GMT"
+          "Value": "Fri, 28 Feb 2025 20:24:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2088,7 +2130,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:45:34 GMT"
+          "Value": "Fri, 28 Feb 2025 20:24:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2125,7 +2167,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:45:34 GMT"
+          "Value": "Fri, 28 Feb 2025 20:24:44 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2446,13 +2488,13 @@
       ]
     },
     {
-      "Route": "js/script.fjg5dy63lg.js",
-      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-fjg5dy63lg.gz",
+      "Route": "js/register.7nrb6g4u1h.js",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\omy8bngysx-7nrb6g4u1h.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000901713255"
+          "Quality": "0.000720980534"
         }
       ],
       "ResponseHeaders": [
@@ -2462,15 +2504,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1108"
+          "Value": "1386"
         },
         {
           "Name": "ETag",
-          "Value": "\"jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc=\""
+          "Value": "\"6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:50:01 GMT"
+          "Value": "Fri, 28 Feb 2025 20:53:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2490,13 +2532,311 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc=\""
+          "Value": "W/\"syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fjg5dy63lg"
+          "Value": "7nrb6g4u1h"
+        },
+        {
+          "Name": "label",
+          "Value": "js/register.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY="
+        }
+      ]
+    },
+    {
+      "Route": "js/register.7nrb6g4u1h.js",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\register.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4881"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Feb 2025 20:53:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7nrb6g4u1h"
+        },
+        {
+          "Name": "label",
+          "Value": "js/register.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY="
+        }
+      ]
+    },
+    {
+      "Route": "js/register.7nrb6g4u1h.js.gz",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\omy8bngysx-7nrb6g4u1h.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1386"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Feb 2025 20:53:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7nrb6g4u1h"
+        },
+        {
+          "Name": "label",
+          "Value": "js/register.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM="
+        }
+      ]
+    },
+    {
+      "Route": "js/register.js",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\omy8bngysx-7nrb6g4u1h.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000720980534"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1386"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Feb 2025 20:53:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY="
+        }
+      ]
+    },
+    {
+      "Route": "js/register.js",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\register.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4881"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Feb 2025 20:53:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-syZJ5qmgLVIhLSeCtMfSxKX5fI+ypP0I2jNAfMmz1BY="
+        }
+      ]
+    },
+    {
+      "Route": "js/register.js.gz",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\omy8bngysx-7nrb6g4u1h.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1386"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Feb 2025 20:53:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6MiAYvfspRKHolgHyEUTlBvu9BUC5ZDhDfg+1OINftM="
+        }
+      ]
+    },
+    {
+      "Route": "js/script.ibfdq7aftd.js",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-ibfdq7aftd.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001410437236"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "708"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Feb 2025 20:50:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ibfdq7aftd"
         },
         {
           "Name": "label",
@@ -2504,12 +2844,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc="
+          "Value": "sha256-MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA="
         }
       ]
     },
     {
-      "Route": "js/script.fjg5dy63lg.js",
+      "Route": "js/script.ibfdq7aftd.js",
       "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\script.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2519,7 +2859,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4130"
+          "Value": "2462"
         },
         {
           "Name": "Content-Type",
@@ -2527,11 +2867,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc=\""
+          "Value": "\"MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:50:01 GMT"
+          "Value": "Fri, 28 Feb 2025 20:50:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2541,7 +2881,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fjg5dy63lg"
+          "Value": "ibfdq7aftd"
         },
         {
           "Name": "label",
@@ -2549,13 +2889,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc="
+          "Value": "sha256-MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA="
         }
       ]
     },
     {
-      "Route": "js/script.fjg5dy63lg.js.gz",
-      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-fjg5dy63lg.gz",
+      "Route": "js/script.ibfdq7aftd.js.gz",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-ibfdq7aftd.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2564,7 +2904,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1108"
+          "Value": "708"
         },
         {
           "Name": "Content-Type",
@@ -2572,11 +2912,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc=\""
+          "Value": "\"19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:50:01 GMT"
+          "Value": "Fri, 28 Feb 2025 20:50:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2594,7 +2934,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fjg5dy63lg"
+          "Value": "ibfdq7aftd"
         },
         {
           "Name": "label",
@@ -2602,18 +2942,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc="
+          "Value": "sha256-19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk="
         }
       ]
     },
     {
       "Route": "js/script.js",
-      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-fjg5dy63lg.gz",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-ibfdq7aftd.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000901713255"
+          "Quality": "0.001410437236"
         }
       ],
       "ResponseHeaders": [
@@ -2623,15 +2963,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1108"
+          "Value": "708"
         },
         {
           "Name": "ETag",
-          "Value": "\"jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc=\""
+          "Value": "\"19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:50:01 GMT"
+          "Value": "Fri, 28 Feb 2025 20:50:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2651,13 +2991,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc=\""
+          "Value": "W/\"MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc="
+          "Value": "sha256-MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA="
         }
       ]
     },
@@ -2672,7 +3012,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4130"
+          "Value": "2462"
         },
         {
           "Name": "Content-Type",
@@ -2680,11 +3020,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc=\""
+          "Value": "\"MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:50:01 GMT"
+          "Value": "Fri, 28 Feb 2025 20:50:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2694,13 +3034,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+/c03Fyvzk8WrJeynMOjYKjrwHdoVJiFVgpiRptBSqc="
+          "Value": "sha256-MjsUe6gBrvGGVkzGNlXTH8WHwhkCDrjO+r2GcOp1UqA="
         }
       ]
     },
     {
       "Route": "js/script.js.gz",
-      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-fjg5dy63lg.gz",
+      "AssetFile": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\obj\\Debug\\net9.0\\compressed\\zujt0g5emg-ibfdq7aftd.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2709,7 +3049,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1108"
+          "Value": "708"
         },
         {
           "Name": "Content-Type",
@@ -2717,11 +3057,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc=\""
+          "Value": "\"19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 27 Feb 2025 19:50:01 GMT"
+          "Value": "Fri, 28 Feb 2025 20:50:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2739,7 +3079,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-jcrjQkyIw2V975ek8xN89KB7DINRvctNb4C+aACZSQc="
+          "Value": "sha256-19PlQIvmuel2Ma1qMid1jPqeKCOGc+fFv5945Z32REk="
         }
       ]
     },

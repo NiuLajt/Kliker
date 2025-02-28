@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\register.js",
+      "PackagePath": "staticwebassets\\js\\register.js"
+    },
+    {
       "Id": "C:\\Dane\\Moje projekty\\Programowanie\\Repozytoria Git\\Kliker\\wwwroot\\js\\script.js",
       "PackagePath": "staticwebassets\\js\\script.js"
     },
