@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kliker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01f68077ddef17922095922616a70b09fc303233")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5b872c78ab31149f89ec83815044e01f60e344f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kliker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kliker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

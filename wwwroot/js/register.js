@@ -119,10 +119,11 @@ function validatePolishChars(username, email, password) {
     return true;
 }
 
-function validateOnServer(form) {
+function validateRegisterFormOnServer(form) {
+    console.log("validateOnServerExecuted");
     const formData = new FormData(form);
 
-    fetch('/Account/Register', {
+    fetch('/Home/Register', {
         method: 'POST',
         body: formData
     })

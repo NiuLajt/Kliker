@@ -40,13 +40,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\register.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"828flspydw"},{"Name":"integrity","Value":"sha256-cPT2L7G8N0SJ0psGTFiSRQvAHiDBclavyvCl2xFIGeM="},{"Name":"label","Value":"_content/Kliker/js/register.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4902"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022cPT2L7G8N0SJ0psGTFiSRQvAHiDBclavyvCl2xFIGeM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Feb 2025 20:59:37 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4902"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022cPT2L7G8N0SJ0psGTFiSRQvAHiDBclavyvCl2xFIGeM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 01 Mar 2025 13:08:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Kliker/js/register.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\register.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cPT2L7G8N0SJ0psGTFiSRQvAHiDBclavyvCl2xFIGeM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4902"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022cPT2L7G8N0SJ0psGTFiSRQvAHiDBclavyvCl2xFIGeM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Feb 2025 20:59:37 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4902"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022cPT2L7G8N0SJ0psGTFiSRQvAHiDBclavyvCl2xFIGeM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 01 Mar 2025 13:08:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Kliker/js/script.ibfdq7aftd.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\script.js'))</AssetFile>

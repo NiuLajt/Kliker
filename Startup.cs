@@ -1,4 +1,5 @@
 using Kliker.Models;
+using Kliker.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -22,6 +23,7 @@ namespace Kliker
         {
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
+            services.AddScoped<UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
