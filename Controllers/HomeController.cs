@@ -1,24 +1,23 @@
 ﻿using Kliker.Models;
+using Kliker.Services;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Kliker.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly AppDbContext _appDbContext;
+        private readonly UserService _userService;
 
-        public HomeController(ILogger<HomeController> logger, AppDbContext appDbContext)
+        public HomeController(ILogger<HomeController> logger, UserService userService)
         {
             _logger = logger;
-            _appDbContext = appDbContext;
+            _userService = userService;
         }
 
         public IActionResult Index()
@@ -52,25 +51,20 @@ namespace Kliker.Controllers
             }
 
             // check if user already exists in database
-            var existingLogin = _appDbContext.Users.FirstOrDefault(u => u.Username == model.Username);
-            if (existingLogin != null)
+            if (!_userService.IsUsernameAvailable(model.Username))
             {
                 ModelState.AddModelError(string.Empty, "Login niedostepny. Wybierz inny login.");
                 return View(model);
             }
-            var existingMail = _appDbContext.Users.FirstOrDefault(u => u.Email == model.Mail);
-            if (existingMail != null)
+            if (!_userService.IsMailAvailable(model.Mail))
             {
                 ModelState.AddModelError(string.Empty, "Adres e-mail niedostepny. Użytkownik z tym adresem istnieje już w bazie.");
                 return View(model);
             }
 
-            var hasher = new PasswordHasher<object>();
-            var newUser = new User(model.Username, model.Mail, hasher.HashPassword(null, model.Password));
-            _appDbContext.Users.Add(newUser);
-            _appDbContext.SaveChanges();
+            _userService.AddUserToDatabase(model);
 
-            return View(model);
+            return View();
         }
     }
 }

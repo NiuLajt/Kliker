@@ -166,5 +166,5 @@ C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\Klik
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\Kliker.genruntimeconfig.cache
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\ref\Kliker.dll
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\9jtf5u0e0z-6maxw4h7sb.gz
-C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\omy8bngysx-7nrb6g4u1h.gz
 C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\zujt0g5emg-ibfdq7aftd.gz
+C:\Dane\Moje projekty\Programowanie\Repozytoria Git\Kliker\obj\Debug\net9.0\compressed\omy8bngysx-828flspydw.gz
