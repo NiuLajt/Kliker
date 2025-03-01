@@ -1,1 +1,39 @@
-.vs/ 
+# Visual Studio
+.vs/
+
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Build results
+*.exe
+*.dll
+*.pdb
+
+# Exclude temporary files
+*~
+*.tmp
+
+# Node / npm
+node_modules/
+
+# Coverage
+coverage/
+
+# Database
+*.mdf
+*.ldf
+*.db
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json

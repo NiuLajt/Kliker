@@ -6,17 +6,17 @@ namespace Kliker.Models;
 /// <summary>
 /// Przechowuje informacje o ulepszeniach nabywanych przez użytkowników. Każdy rekord to pojedyncze ulepszenie reprezentowane przez nazwę i opis.
 /// </summary>
-public partial class Upgrade(string name, string description, decimal price, int levelRequired)
+public partial class Upgrade
 {
     public int Id { get; set; }
 
-    public string Name { get; set; } = name;
+    public string Name { get; set; }
 
-    public string Description { get; set; } = description;
+    public string Description { get; set; }
 
-    public decimal Price { get; set; } = price;
+    public decimal Price { get; set; }
 
-    public int LevelRequired { get; set; } = levelRequired;
+    public int LevelRequired { get; set; }
 
     public virtual ICollection<PlayersUpgrade> PlayersUpgrades { get; set; } = [];
 }

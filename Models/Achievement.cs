@@ -6,13 +6,13 @@ namespace Kliker.Models;
 /// <summary>
 /// Przechowuje informacje o osiągnięciach. Każdy rekord to jedno dostępne do zdobycia osiągnięcie reprezentowane poprzez nazwę oraz opis.
 /// </summary>
-public partial class Achievement(string name, string description)
+public partial class Achievement
 {
     public int Id { get; set; }
 
-    public string Name { get; set; } = name;
+    public string Name { get; set; }
 
-    public string Description { get; set; } = description;
+    public string Description { get; set; }
 
     public virtual ICollection<PlayersAchievement> PlayersAchievements { get; set; } = [];
 }

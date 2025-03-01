@@ -145,13 +145,13 @@ function validateRegisterFormOnServer(form) {
 
 function handleServerValidationError(errorType) {
     switch (errorType) {
-        case "UsernameTaken":
+        case "LOGIN_TAKEN":
             openModal("Login jest już zajęty.");
             break;
-        case "EmailTaken":
+        case "MAIL_TAKEN":
             openModal("Adres e-mail jest już zajęty.");
             break;
-        case "InvalidForm":
+        case "INVALID_FORM":
             openModal("Błędne dane formularza. Sprawdź poprawność danych i spróbuj ponownie.");
             break;
 

@@ -46,25 +46,22 @@ namespace Kliker.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ModelState.Clear();
-                return View(model);
+                return Json(new { success = false, errorType = "INVALID_FORM" });
             }
 
             // check if user already exists in database
             if (!_userService.IsUsernameAvailable(model.Username))
             {
-                ModelState.AddModelError(string.Empty, "Login niedostepny. Wybierz inny login.");
-                return View(model);
+                return Json(new { success = false, errorType = "LOGIN_TAKEN" });
             }
             if (!_userService.IsMailAvailable(model.Mail))
             {
-                ModelState.AddModelError(string.Empty, "Adres e-mail niedostepny. Użytkownik z tym adresem istnieje już w bazie.");
-                return View(model);
+                return Json(new { success = false, errorType = "MAIN_TAKEN" });
             }
 
             _userService.AddUserToDatabase(model);
 
-            return View();
+            return Json(new {success = true});
         }
     }
 }
