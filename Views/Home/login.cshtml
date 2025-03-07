@@ -8,10 +8,10 @@
 
         <div id="login_screen" class="screen">
             <div id="login_panel" class="panel">
-                <form id="login_form" action="/" method="post">
+                <form id="login_form" action="/" method="post" autocomplete="off">
                     <h3 id="loginpanel_header" class="panel_header separator">LOGOWANIE</h3>
-                    <input id="username_input" type="text" name="username" placeholder="Wprowadź login..." required />
-                    <input id="password_input" type="password" name="password" placeholder="Wprowadź hasło..." required />
+                    <input id="username_input" type="text" name="username" placeholder="Wprowadź login..." />
+                    <input id="password_input" type="password" name="password" placeholder="Wprowadź hasło..." />
                     <button type="submit" id="signin_button" class="mainrole_button">ZALOGUJ</button>
                     <a id="passwordrecovery_link" href="error.html" class="separator">Nie pamiętam hasła (nic z tego, ta usługa nie działa)</a>
                     <p id="registernewaccount_text" class="panel_text">Nie masz konta?</p>
@@ -23,5 +23,14 @@
             <div id="login_footer" class="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
         </div>
 
+    </div>
+</div>
+
+<!-- Dialogue window (modal) used for form-inputs related errors and user interaction -->
+<div id="errorModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <p id="modalMessage"></p>
+        <button id="okModalButton">Ok</button>
     </div>
 </div>

@@ -20,7 +20,7 @@ function validateRegisterFormLocally() {
     const passwordInput = document.getElementById("password_input");
     const confirmPasswordInput = document.getElementById("passwordconfirm_input");
 
-    if (!validateRequiredFields(usernameInput, emailInput, passwordInput, confirmPasswordInput)) {
+    if (!validateRequiredFieldsRegisterForm(usernameInput, emailInput, passwordInput, confirmPasswordInput)) {
         return false;
     }
 
@@ -43,7 +43,7 @@ function validateRegisterFormLocally() {
     return true;
 }
 
-function validateRequiredFields(username, email, password, confirmPassword) {
+function validateRequiredFieldsRegisterForm(username, email, password, confirmPassword) {
     if (!username.value || !email.value || !password.value || !confirmPassword.value) {
         openModal("Formularz rejestracji nie jest kompletny. Wypełnij wszystkie puste pola.");
         return false;
@@ -132,9 +132,7 @@ function validateRegisterFormOnServer(form) {
             if (!result.success) {
                 handleServerValidationError(result.errorType);
             } else {
-                openModal("Rejestracja zakończona sukcesem!");
-                // Możesz przekierować np.:
-                // window.location.href = '/Account/Login';
+                openModal("Rejestracja zakończona sukcesem!"); // możliwe przekierowanie
             }
         })
         .catch(error => {
