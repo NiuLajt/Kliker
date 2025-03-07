@@ -50,18 +50,37 @@ namespace Kliker.Controllers
             }
 
             // check if user already exists in database
-            if (!_userService.IsUsernameAvailable(model.Username))
+            if (_userService.IsUsernameAvailable(model.Username))
             {
                 return Json(new { success = false, errorType = "LOGIN_TAKEN" });
             }
-            if (!_userService.IsMailAvailable(model.Mail))
+            if (_userService.IsMailAvailable(model.Mail))
             {
-                return Json(new { success = false, errorType = "MAIN_TAKEN" });
+                return Json(new { success = false, errorType = "MAIL_TAKEN" });
             }
 
             _userService.AddUserToDatabase(model);
 
             return Json(new {success = true});
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginViewModel model) 
+        {
+            if (!ModelState.IsValid) 
+            {
+                return Json(new { success = false, erroryType = "INVALID_FORM" });
+            }
+
+            // check if user exists (mail or username in database)
+            if (!_userService.IsUserAvailableByUsernameOrMail(model.Username, model.Password))
+            {
+                return Json(new { success = false, errorType = "USER_NOT_FOUND" });
+            }
+
+            if(_userService.ValidateUserByPassword(model.Username, model.Password)) return Json(new { success = true }); // TODO: return page for SIGNED IN user
+
+            return Json(new { success = false, errorType = "UNKNOWN_ERROR" });
         }
     }
 }

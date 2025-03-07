@@ -3,7 +3,6 @@
 
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
-            console.log("dupa");
             event.preventDefault();
 
             if (!validateLoginFormLocally()) {
@@ -35,7 +34,6 @@ function validateRequiredFieldsLoginForm(username, password) {
 }
 
 function validateLoginFormOnServer(form) {
-    console.log("validateOnServerExecuted");
     const formData = new FormData(form);
 
     fetch('/Home/Login', {
@@ -58,7 +56,7 @@ function validateLoginFormOnServer(form) {
 
 function handleServerLoginError(errorType) {
     switch (errorType) {
-        case "INVALID_CREDENTIALS":
+        case "INVALID_FORM":
             openModal("Błędne dane logowania. Sprawdź login i hasło.");
             break;
         case "USER_NOT_FOUND":
