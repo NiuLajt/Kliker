@@ -1,11 +1,15 @@
 ﻿using Kliker.Models;
 using Kliker.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 
 namespace Kliker.Controllers
 {
@@ -44,20 +48,12 @@ namespace Kliker.Controllers
         [HttpPost]
         public IActionResult Register(RegisterViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return Json(new { success = false, errorType = "INVALID_FORM" });
-            }
+            if (!ModelState.IsValid) return Json(new { success = false, errorType = "INVALID_FORM" });
 
             // check if user already exists in database
-            if (_userService.IsUsernameAvailable(model.Username))
-            {
-                return Json(new { success = false, errorType = "LOGIN_TAKEN" });
-            }
-            if (_userService.IsMailAvailable(model.Mail))
-            {
-                return Json(new { success = false, errorType = "MAIL_TAKEN" });
-            }
+            if (_userService.IsUsernameAvailable(model.Username)) return Json(new { success = false, errorType = "LOGIN_TAKEN" });
+
+            if (_userService.IsMailAvailable(model.Mail)) return Json(new { success = false, errorType = "MAIL_TAKEN" });
 
             _userService.AddUserToDatabase(model);
 
@@ -67,20 +63,29 @@ namespace Kliker.Controllers
         [HttpPost]
         public IActionResult Login(LoginViewModel model) 
         {
-            if (!ModelState.IsValid) 
-            {
-                return Json(new { success = false, erroryType = "INVALID_FORM" });
-            }
+            if (!ModelState.IsValid) return Json(new { success = false, errorType = "INVALID_FORM" });
 
             // check if user exists (mail or username in database)
-            if (!_userService.IsUserAvailableByUsernameOrMail(model.Username, model.Password))
+            if (!_userService.IsUserAvailableByUsernameOrMail(model.Username)) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
+
+            if (!_userService.ValidateUserByPassword(model.Username, model.Password)) return Json(new { success = false, errorType = "INVALID_CREDENTIALS" });
+
+            var user = _userService.GetUserFromDatabase(model.Username);
+            if(user is null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
+
+            var claims = new List<Claim>
             {
-                return Json(new { success = false, errorType = "USER_NOT_FOUND" });
-            }
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim("UserId", user.Id.ToString())
+            };
 
-            if(_userService.ValidateUserByPassword(model.Username, model.Password)) return Json(new { success = true }); // TODO: return page for SIGNED IN user
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties { IsPersistent = true };
 
-            return Json(new { success = false, errorType = "UNKNOWN_ERROR" });
+            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
+            return Json(new { success = true, redirectUrl = Url.Action("Dashboard", "Home") });
         }
     }
 }

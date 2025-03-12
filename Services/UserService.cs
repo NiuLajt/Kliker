@@ -25,15 +25,21 @@ namespace Kliker.Services
             return _appDbContext.Users.Any(u => u.Email == mail);
         }
 
-        public bool IsUserAvailableByUsernameOrMail(string username, string password)
+        public bool IsUserAvailableByUsernameOrMail(string username)
         {
             if (!IsUsernameAvailable(username) && !IsMailAvailable(username)) return false;
             return true;
         }
 
+        public User GetUserFromDatabase(string username)
+        {
+            if (IsUserAvailableByUsernameOrMail(username)) return _appDbContext.Users.FirstOrDefault(u => u.Username == username || u.Email == username);
+            else return null;
+        }
+
         public bool ValidateUserByPassword(string username, string password)
         {
-            if(!IsUserAvailableByUsernameOrMail(username, password)) return false;
+            if(!IsUserAvailableByUsernameOrMail(username)) return false;
 
             User user = null;
             if (IsUsernameAvailable(username)) user = _appDbContext.Users.FirstOrDefault(u => u.Username == username);
@@ -43,7 +49,7 @@ namespace Kliker.Services
             var result = _hasher.VerifyHashedPassword(user, user.PasswordHash, password);
 
             return result == PasswordVerificationResult.Success;
-        }
+        }   
 
         public User CreateUser(RegisterViewModel model)
         {
