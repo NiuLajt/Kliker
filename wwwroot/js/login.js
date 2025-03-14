@@ -42,10 +42,10 @@ function validateLoginFormOnServer(form) {
     })
         .then(response => response.json())
         .then(result => {
-            if (!result.success) {
-                handleServerLoginError(result.errorType);
+            if (result.success) {
+                handleRedirectionAfterLogin(result.redirectUrl);
             } else {
-                openModal("Logowanie zakończone sukcesem!"); // możliwe przekierowanie
+                handleServerLoginError(result.errorType);
             }
         })
         .catch(error => {
@@ -54,9 +54,13 @@ function validateLoginFormOnServer(form) {
         });
 }
 
+
 function handleServerLoginError(errorType) {
     switch (errorType) {
         case "INVALID_FORM":
+            openModal("Formularz nieprawidłowy.");
+            break;
+        case "INVALID_CREDENTIALS":
             openModal("Błędne dane logowania. Sprawdź login i hasło.");
             break;
         case "USER_NOT_FOUND":
@@ -65,5 +69,11 @@ function handleServerLoginError(errorType) {
         default:
             openModal("Wystąpił nieoczekiwany błąd.");
             break;
+    }
+}
+
+function handleRedirectionAfterLogin(redirectUrl) {
+    if (redirectUrl) {
+        window.location.href = redirectUrl;
     }
 }

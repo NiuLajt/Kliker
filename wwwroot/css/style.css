@@ -197,6 +197,20 @@ input
     margin-top: 100px;
 }
 
+#username_header
+{
+    color: var(--content_gray);
+    font-family: Arial;
+    font-size: 16px;
+}
+
+#level_header
+{
+    color: var(--content_gray);
+    font-family: Arial;
+    font-size: 16px;
+}
+
 .panel_header
 {
     position: relative;
@@ -347,6 +361,37 @@ input
     margin-bottom: 15px;
 }
 
+.dashboard_page .secondaryrole_button
+{
+    margin-top: 100px;
+}
+
+#achievements_button
+{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#upgrades_button
+{
+    margin-top: 20px;
+}
+
+#logout_button::before /*separator*/
+{
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    display: block;
+    width: 150px;
+    height: 10px;
+    background-color: var(--content_gray);
+    border-radius: 10px;
+    margin: 0px auto 50px;
+}
+
 #passwordrecovery_link::after
 {
     margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
@@ -364,6 +409,33 @@ input
         transform: scale(1.25);
         color: var(--accent_orange);
     }
+
+progress
+{
+    width: 70%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    progress::-webkit-progress-bar
+    {
+        background-color: var(--content_gray);
+        border-radius: 10px;
+    }
+
+    progress::-webkit-progress-value
+    {
+        background-color: var(--accent_orange);
+        border-radius: 10px;
+    }
+
+    progress::-moz-progress-bar
+    {
+        background-color: #4caf50;
+        border-radius: 10px;
+    }
+
 
 /* Ogólna nakładka - tło, które przesłania całą stronę */
 .modal

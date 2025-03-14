@@ -6,7 +6,7 @@ namespace Kliker.Controllers
     public class DashboardController : Controller
     {
         [Authorize]
-        public IActionResult Dashboard()
+        public IActionResult Dashboard() // returns main page (like Index.cshtml) for signed in user
         {
             return View();
         }

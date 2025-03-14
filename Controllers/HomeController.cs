@@ -2,6 +2,7 @@
 using Kliker.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -86,6 +87,12 @@ namespace Kliker.Controllers
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
 
             return Json(new { success = true, redirectUrl = Url.Action("Dashboard", "Home") });
+        }
+
+        [Authorize]
+        public IActionResult Dashboard() // returns main page (like Index.cshtml) for signed in user
+        {
+            return View();
         }
     }
 }

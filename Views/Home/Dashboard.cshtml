@@ -1,0 +1,32 @@
+﻿@{
+    var filePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "wwwroot", "index.html");
+    ViewData["Title"] = "Kliker - klikaj i wygrywaj";
+}
+
+<div class="text-center dashboard_page">
+        <div id="container">
+
+            <div id="game_screen" class="screen">
+                <h1 id="main_header">Kliker :D</h1>
+                <h3 id="gameinfo_header" class="game_header">Klikaj w poniższy przycisk, aby zdobywać punkty. Możesz grać jako gość, ale do zapisu postępów wymagana jest rejestracja konta.</h3>
+                <div id="clicker">KLIKNIJ!</div>
+                <h3 id="clickcount_header" class="game_header">Wyklikano:</h3>
+                <h1 id="clickcounter" class="game_header">0</h1>
+                <div id="main_footer" class="footer">Strona stworzona przez Niulajta © 2024 Wszystkie prawa zastrzeżone</div>
+            </div>
+
+            <div id="secondary_screen" class="screen">
+                <div id="main_panel" class="panel">
+                    <h3 id="panelmenu_header" class="panel_header separator">MENU</h3>
+                    <img src="~/images/avatar.png" width="150" height="150" alt="avatar">
+                    <h3 id="username_header">NICKNAME</h3>
+                    <progress id="level_progress" value="50" max="100"></progress>
+                    <h3 id="level_header">16 lvl</h3>
+                    <button id="upgrades_button" class="mainrole_button">ULEPSZENIA</button>
+                    <button id="achievements_button" class="mainrole_button">OSIĄGNIĘCIA</button>
+                    <button id="logout_button" class="secondaryrole_button">WYLOGUJ</button>
+                </div>
+            </div>
+
+        </div>
+</div>
