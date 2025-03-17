@@ -132,7 +132,7 @@ function validateRegisterFormOnServer(form) {
             if (!result.success) {
                 handleServerValidationError(result.errorType);
             } else {
-                openModal("Rejestracja zakończona sukcesem!"); // możliwe przekierowanie
+                handleRedirectionAfterRegister("/Home/Login");
             }
         })
         .catch(error => {
@@ -156,5 +156,11 @@ function handleServerValidationError(errorType) {
         default:
             openModal("Wystąpił nieoczekiwany błąd.");
             break;
+    }
+}
+
+function handleRedirectionAfterRegister(redirectUrl) {
+    if (redirectUrl) {
+        window.location.href = redirectUrl;
     }
 }

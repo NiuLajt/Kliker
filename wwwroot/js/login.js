@@ -66,6 +66,7 @@ function handleServerLoginError(errorType) {
         case "USER_NOT_FOUND":
             openModal("Nie znaleziono użytkownika.");
             break;
+
         default:
             openModal("Wystąpił nieoczekiwany błąd.");
             break;

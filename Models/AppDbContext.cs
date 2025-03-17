@@ -49,7 +49,7 @@ public partial class AppDbContext : DbContext
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
-                .HasColumnName("ID");
+                .HasColumnName("Id");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Name)
                 .IsRequired()
@@ -59,14 +59,14 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<PlayersAchievement>(entity =>
         {
-            entity.HasKey(e => e.PlayerId).HasName("players&achievments_pkey");
+            entity.HasKey(e => e.PlayerId).HasName("PlayersAchievments_pkey");
 
-            entity.ToTable("players&achievments", tb => tb.HasComment("Tabela pośrednia pomiędzy tabelą użytkowników a tabelą osiągnięć. Przechowuje ona informacje o zdobyciu przez konkretnego użytkownika konkretnego osiągnięcia wraz z datą tego wydarzenia."));
+            entity.ToTable("PlayersAchievments", tb => tb.HasComment("Tabela pośrednia pomiędzy tabelą użytkowników a tabelą osiągnięć. Przechowuje ona informacje o zdobyciu przez konkretnego użytkownika konkretnego osiągnięcia wraz z datą tego wydarzenia."));
 
             entity.Property(e => e.PlayerId)
                 .ValueGeneratedOnAdd()
-                .HasColumnName("playerID");
-            entity.Property(e => e.AchievementId).HasColumnName("achievementID");
+                .HasColumnName("playerId");
+            entity.Property(e => e.AchievementId).HasColumnName("achievementId");
             entity.Property(e => e.DateIfBeingAchieved).HasColumnName("dateIfBeingAchieved");
 
             entity.HasOne(d => d.Achievement).WithMany(p => p.PlayersAchievements)
@@ -82,28 +82,28 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<PlayersUpgrade>(entity =>
         {
-            entity.HasKey(e => new { e.PlayerId, e.UpgradeId }).HasName("players&upgrades_pkey");
+            entity.HasKey(e => new { e.PlayerId, e.UpgradeId }).HasName("PlayersUpgrades_pkey");
 
-            entity.ToTable("players&upgrades", tb => tb.HasComment("Tabela pomocnicza zawierająca informacje o odblokowaniu ulepszeń przez graczy. Każdy rekord to reprezentacja odblokowania ulepszenia o konkretnym ID przez gracza o konkretnym ID."));
+            entity.ToTable("PlayersUpgrades", tb => tb.HasComment("Tabela pomocnicza zawierająca informacje o odblokowaniu ulepszeń przez graczy. Każdy rekord to reprezentacja odblokowania ulepszenia o konkretnym ID przez gracza o konkretnym ID."));
 
-            entity.Property(e => e.PlayerId).HasColumnName("playerID");
-            entity.Property(e => e.UpgradeId).HasColumnName("upgradeID");
+            entity.Property(e => e.PlayerId).HasColumnName("playerId");
+            entity.Property(e => e.UpgradeId).HasColumnName("upgradeId");
             entity.Property(e => e.DateOfBeingUpgraded).HasColumnName("dateOfBeingUpgraded");
 
             entity.HasOne(d => d.Player).WithMany(p => p.PlayersUpgrades)
                 .HasForeignKey(d => d.PlayerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("PlayerID foreign key");
+                .HasConstraintName("PlayerId foreign key");
 
             entity.HasOne(d => d.Upgrade).WithMany(p => p.PlayersUpgrades)
                 .HasForeignKey(d => d.UpgradeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("UpgradeID foreign key");
+                .HasConstraintName("UpgradeId foreign key");
         });
 
         modelBuilder.Entity<Upgrade>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("upgrades_pkey");
+            entity.HasKey(e => e.Id).HasName("Upgrades_pkey");
 
             entity.ToTable("upgrades", tb => tb.HasComment("Przechowuje informacje o ulepszeniach nabywanych przez użytkowników. Każdy rekord to pojedyncze ulepszenie reprezentowane przez nazwę i opis."));
 
@@ -125,32 +125,31 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("users_pkey");
+            entity.HasKey(e => e.Id).HasName("Users_pkey");
 
-            entity.ToTable("users", tb => tb.HasComment("Zawiera informacje o kontach użytkowników. Każdy rekord to reprezentacja jednego użytkownika w postaci loginu, maila, hasła..."));
+            entity.ToTable("Users", tb => tb.HasComment("Zawiera informacje o kontach użytkowników. Każdy rekord to reprezentacja jednego użytkownika w postaci loginu, maila, hasła..."));
 
-            entity.HasIndex(e => e.Email, "email_unique").IsUnique();
-
-            entity.HasIndex(e => e.Username, "username_unique").IsUnique();
-
-            entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Id).HasColumnName("Id");
+            entity.Property(e => e.Points)
+                .HasDefaultValue(0)
+                .HasColumnName("Points");
             entity.Property(e => e.Banned)
                 .HasDefaultValue(false)
-                .HasColumnName("banned");
+                .HasColumnName("Banned");
             entity.Property(e => e.Email)
                 .IsRequired()
                 .HasMaxLength(255)
-                .HasColumnName("email");
+                .HasColumnName("Email");
             entity.Property(e => e.Lvl)
                 .HasDefaultValue(0)
-                .HasColumnName("lvl");
+                .HasColumnName("Lvl");
             entity.Property(e => e.PasswordHash)
                 .IsRequired()
-                .HasColumnName("password_hash");
+                .HasColumnName("PasswordHash");
             entity.Property(e => e.Username)
                 .IsRequired()
                 .HasMaxLength(35)
-                .HasColumnName("username");
+                .HasColumnName("Username");
         });
 
         OnModelCreatingPartial(modelBuilder);
