@@ -20,6 +20,8 @@ public partial class User
 
     public bool Banned { get; set; }
 
+    public int Points { get; set; } = 0;
+
     public virtual ICollection<PlayersAchievement> PlayersAchievements { get; set; } = [];
 
     public virtual ICollection<PlayersUpgrade> PlayersUpgrades { get; set; } = [];
@@ -31,5 +33,6 @@ public partial class User
         PasswordHash = passwordHash;
         Lvl = 0;
         Banned = false;
+        Points = 0;
     }
 }
