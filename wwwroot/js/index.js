@@ -1,6 +1,6 @@
 ﻿
 let animationInProgress = false;
-function handleClicking() {
+function handleClickingGuest() {
     const clickerDiv = document.getElementById("clicker");
     const clickCountDisplay = document.getElementById("clickcounter");
     if (!clickerDiv || !clickCountDisplay) {

@@ -40,6 +40,12 @@ namespace Kliker.Controllers
             return View();
         }
 
+        [Authorize]
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -90,9 +96,25 @@ namespace Kliker.Controllers
         }
 
         [Authorize]
-        public IActionResult Dashboard() // returns main page (like Index.cshtml) for signed in user
+        public IActionResult UserData()
         {
-            return View();
+            // check cookies for authentication and send data about user to browser
+            var usernameClaim = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" || c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
+            if (usernameClaim == null) return Json(new { success = false, errorType = "_USER_NOT_FOUND" });
+
+            var username = usernameClaim.Value;
+            var user = _userService.GetUserFromDatabase(username);
+            if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND_" });
+
+            return Json(new
+            {
+                success = true,
+                userId = user.Id,
+                username = user.Username,
+                points = user.Points,
+                level = user.Lvl
+            });
         }
+
     }
 }

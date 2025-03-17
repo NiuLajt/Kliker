@@ -40,10 +40,12 @@ function handleModal() {
     window.openModal = openModal;
 }
 
+// main program - invoke functions when everything is loaded
 document.addEventListener("DOMContentLoaded", function () {
     handleNavigation();
-    handleClicking();
+    handleClickingGuest();
     handleModal();
     handleRegisterFormValidation();
     handleLoginFormValidation();
+    updateUserData();
 });
