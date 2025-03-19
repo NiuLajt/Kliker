@@ -62,7 +62,7 @@ function handleServerLoginError(errorType) {
             break;
         case "INVALID_CREDENTIALS":
             openModal("Błędne dane logowania. Sprawdź login i hasło.");
-            break;
+            break;0
         case "USER_NOT_FOUND":
             openModal("Nie znaleziono użytkownika.");
             break;

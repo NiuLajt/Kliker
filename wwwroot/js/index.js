@@ -1,11 +1,8 @@
 ﻿
-let animationInProgress = false;
 function handleClickingGuest() {
     const clickerDiv = document.getElementById("clicker");
     const clickCountDisplay = document.getElementById("clickcounter");
-    if (!clickerDiv || !clickCountDisplay) {
-        return; // stop here if elements are not present on current site
-    }
+    if (!clickerDiv || !clickCountDisplay) return;
 
     let clickCount = parseInt(localStorage.getItem("clickCount")) || 0;
     clickCountDisplay.textContent = clickCount;
@@ -13,16 +10,23 @@ function handleClickingGuest() {
     clickerDiv.addEventListener("click", function () {
         clickCount++;
         clickCountDisplay.textContent = clickCount;
-
-        if (!animationInProgress) {
-            // animation after click
-            animationInProgress = true;
-            clickCountDisplay.classList.add('clicked');
-            requestAnimationFrame(function () {
-                setTimeout(function () { clickCountDisplay.classList.remove('clicked'); animationInProgress = false; }, 300);
-            });
-        }
-
+        playClickAnimation();
         localStorage.setItem("clickCount", clickCount);
     });
+}
+
+function handleNavigationGuest() {
+    const loginButton = document.getElementById("login_button");
+    if (loginButton) {
+        loginButton.addEventListener("click", function () {
+            window.location.href = "/Home/Login";
+        });
+    }
+
+    const registerButton = document.getElementById("register_button");
+    if (registerButton) {
+        registerButton.addEventListener("click", function () {
+            window.location.href = "/Home/Register";
+        });
+    }
 }

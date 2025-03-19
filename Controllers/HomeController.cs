@@ -3,8 +3,6 @@ using Kliker.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -95,16 +93,23 @@ namespace Kliker.Controllers
             return Json(new { success = true, redirectUrl = Url.Action("Dashboard", "Home") });
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
+        }
+
+
         [Authorize]
         public IActionResult UserData()
         {
             // check cookies for authentication and send data about user to browser
             var usernameClaim = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" || c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
-            if (usernameClaim == null) return Json(new { success = false, errorType = "_USER_NOT_FOUND" });
+            if (usernameClaim == null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
 
             var username = usernameClaim.Value;
             var user = _userService.GetUserFromDatabase(username);
-            if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND_" });
+            if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
 
             return Json(new
             {
@@ -116,5 +121,19 @@ namespace Kliker.Controllers
             });
         }
 
+        [HttpPost]
+        [Authorize]
+        public IActionResult UpdatePoints([FromBody] UpdatePointsModel model)
+        {
+            _logger.LogInformation(model.Username);
+            if (model is null || string.IsNullOrEmpty(model.Username)) return Json(new { success = false, errorType = "INVALID_DATA" });
+
+            var user = _userService.GetUserFromDatabase(model.Username);
+            if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
+
+            _userService.UpdatePoints(model);
+
+            return Json(new { success = true });
+        }
     }
 }

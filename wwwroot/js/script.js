@@ -1,16 +1,43 @@
-﻿function handleNavigation() {
-    const loginButton = document.getElementById("login_button");
-    if (loginButton) {
-        loginButton.addEventListener("click", function () {
-            window.location.href = "/Home/Login";
-        });
-    }
+﻿animationInProgress = false;
+function playClickAnimation() {
+    const clickCountDisplay = document.getElementById("clickcounter");
+    if (!clickCountDisplay || animationInProgress) return;
+    animationInProgress = true;
+    clickCountDisplay.classList.add('clicked');
+    
+    setTimeout(() => {
+        clickCountDisplay.classList.remove('clicked');
+        animationInProgress = false;
+    }, 300);
+}
 
-    const registerButton = document.getElementById("register_button");
-    if (registerButton) {
-        registerButton.addEventListener("click", function () {
-            window.location.href = "/Home/Register";
-        });
+function handleClicking() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/") {
+        handleClickingGuest();
+    } else if (currentPath === "/Home/Dashboard") {
+        handleClickingUser();
+    }
+}
+
+function handleNavigation() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/") {
+        handleNavigationGuest();
+    } else if (currentPath === "/Home/Dashboard") {
+        //handleNavigationUser(); do zrobienia w przyszłości
+    }
+}
+
+function handleValidation() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/Home/Login") {
+        handleLoginFormValidation();
+    } else if (currentPath === "/Home/Register") {
+        handleRegisterFormValidation();
     }
 }
 
@@ -43,9 +70,9 @@ function handleModal() {
 // main program - invoke functions when everything is loaded
 document.addEventListener("DOMContentLoaded", function () {
     handleNavigation();
-    handleClickingGuest();
+    handleClicking();
+    handleValidation();
     handleModal();
-    handleRegisterFormValidation();
-    handleLoginFormValidation();
     updateUserData();
+    updatePointsValueInDatabase();
 });
