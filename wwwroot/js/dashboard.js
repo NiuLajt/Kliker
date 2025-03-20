@@ -125,3 +125,24 @@ function updatePointsValueInDatabase() {
             });
     }, 10000);
 }
+
+function logout() {
+    document.getElementById("logout_button").addEventListener("click", async function () {
+        try {
+            const response = await fetch("/Home/Logout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+            });
+
+            if (response.ok) {
+                localStorage.clear();
+                window.location.href = "/";
+            } else {
+                console.error("Błąd podczas wylogowania.");
+            }
+        } catch (error) {
+            console.error("Błąd komunikacji z serwerem:", error);
+        }
+    });
+
+}

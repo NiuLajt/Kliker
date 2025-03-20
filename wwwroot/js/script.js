@@ -28,6 +28,7 @@ function handleNavigation() {
         handleNavigationGuest();
     } else if (currentPath === "/Home/Dashboard") {
         //handleNavigationUser(); do zrobienia w przyszłości
+        logout();
     }
 }
 

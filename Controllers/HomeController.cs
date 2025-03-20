@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Kliker.Controllers
 {
@@ -93,10 +95,12 @@ namespace Kliker.Controllers
             return Json(new { success = true, redirectUrl = Url.Action("Dashboard", "Home") });
         }
 
-        public IActionResult Logout()
-        {
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        { 
+            _logger.LogInformation("Próba wylogowania...");
+            await HttpContext.SignOutAsync("Cookies");
+            return Json(new { success = true });
         }
 
 
@@ -125,7 +129,6 @@ namespace Kliker.Controllers
         [Authorize]
         public IActionResult UpdatePoints([FromBody] UpdatePointsModel model)
         {
-            _logger.LogInformation(model.Username);
             if (model is null || string.IsNullOrEmpty(model.Username)) return Json(new { success = false, errorType = "INVALID_DATA" });
 
             var user = _userService.GetUserFromDatabase(model.Username);
