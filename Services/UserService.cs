@@ -1,5 +1,6 @@
 ﻿using Kliker.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Kliker.Services
@@ -61,14 +62,6 @@ namespace Kliker.Services
         {
             var newUser = CreateUser(model);
             _appDbContext.Users.Add(newUser);
-            _appDbContext.SaveChanges();
-        }
-
-        public void UpdatePoints(UpdatePointsModel model)
-        {
-            var user = _appDbContext.Users.FirstOrDefault(u => u.Username == model.Username);
-            if (user == null) return;
-            user.Points = model.Points;
             _appDbContext.SaveChanges();
         }
     }
