@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -18,39 +19,36 @@ namespace Kliker.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UserService _userService;
+        private readonly GameplayService _gameplayService;
 
-        public HomeController(ILogger<HomeController> logger, UserService userService)
+        public HomeController(ILogger<HomeController> logger, UserService userService, GameplayService gameplayService)
         {
             _logger = logger;
             _userService = userService;
+            _gameplayService = gameplayService;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
+        public IActionResult Index() { return View(); }
+       
+        public IActionResult Login() { return View(); }
+
+        public IActionResult Register() { return View(); }
 
         [Authorize]
-        public IActionResult Dashboard()
-        {
-            return View();
-        }
+        public IActionResult Dashboard() { return View(); }
+
+        [Authorize]
+        public IActionResult Upgrades() { return View(); }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
 
         [HttpPost]
         public IActionResult Register(RegisterViewModel model)
@@ -59,7 +57,6 @@ namespace Kliker.Controllers
 
             // check if user already exists in database
             if (_userService.IsUsernameAvailable(model.Username)) return Json(new { success = false, errorType = "LOGIN_TAKEN" });
-
             if (_userService.IsMailAvailable(model.Mail)) return Json(new { success = false, errorType = "MAIL_TAKEN" });
 
             _userService.AddUserToDatabase(model);
@@ -131,12 +128,29 @@ namespace Kliker.Controllers
         {
             if (model is null || string.IsNullOrEmpty(model.Username)) return Json(new { success = false, errorType = "INVALID_DATA" });
 
+            // update user's points in database using POST request
             var user = _userService.GetUserFromDatabase(model.Username);
             if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
 
-            _userService.UpdatePoints(model);
+            _gameplayService.UpdatePoints(model);
 
             return Json(new { success = true });
+        }
+
+        [Authorize]
+        public IActionResult UpgradesUnlockedAndNot()
+        {
+            // get all upgrades that exist in game (upgrades are manually added to database during app development, list should never be empty)
+            var usernameClaim = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" || c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
+            if (usernameClaim == null) return Json(new { success = false, errorType = "USER_NOT_FOUND__INTERNAL_COOKIES_PROBLEM" });
+
+            var username = usernameClaim.Value;
+            var user = _userService.GetUserFromDatabase(username);
+            if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
+
+            List<UpgradeViewModel> upgrades = _gameplayService.GetUpgradesReadyToShowOnSite(user);
+
+            return Json(new { success = true, upgradesList = upgrades });
         }
     }
 }
