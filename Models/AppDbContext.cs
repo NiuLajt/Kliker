@@ -84,11 +84,11 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => new { e.PlayerId, e.UpgradeId }).HasName("PlayersUpgrades_pkey");
 
-            entity.ToTable("PlayersUpgrades", tb => tb.HasComment("Tabela pomocnicza zawierająca informacje o odblokowaniu ulepszeń przez graczy. Każdy rekord to reprezentacja odblokowania ulepszenia o konkretnym ID przez gracza o konkretnym ID."));
+            entity.ToTable("PlayerUpgrades", tb => tb.HasComment("Tabela pomocnicza zawierająca informacje o odblokowaniu ulepszeń przez graczy. Każdy rekord to reprezentacja odblokowania ulepszenia o konkretnym ID przez gracza o konkretnym ID."));
 
-            entity.Property(e => e.PlayerId).HasColumnName("playerId");
-            entity.Property(e => e.UpgradeId).HasColumnName("upgradeId");
-            entity.Property(e => e.DateOfBeingUpgraded).HasColumnName("dateOfBeingUpgraded");
+            entity.Property(e => e.PlayerId).HasColumnName("PlayerId");
+            entity.Property(e => e.UpgradeId).HasColumnName("UpgradeId");
+            entity.Property(e => e.DateOfBeingUpgraded).HasColumnName("DateOfBeingUpgraded");
 
             entity.HasOne(d => d.Player).WithMany(p => p.PlayersUpgrades)
                 .HasForeignKey(d => d.PlayerId)
@@ -105,22 +105,22 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("Upgrades_pkey");
 
-            entity.ToTable("upgrades", tb => tb.HasComment("Przechowuje informacje o ulepszeniach nabywanych przez użytkowników. Każdy rekord to pojedyncze ulepszenie reprezentowane przez nazwę i opis."));
+            entity.ToTable("Upgrades", tb => tb.HasComment("Przechowuje informacje o ulepszeniach nabywanych przez użytkowników. Każdy rekord to pojedyncze ulepszenie reprezentowane przez nazwę i opis."));
 
             entity.HasIndex(e => e.Name, "name is unique").IsUnique();
 
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
-                .HasColumnName("ID");
-            entity.Property(e => e.Description).HasColumnName("description");
-            entity.Property(e => e.LevelRequired).HasColumnName("levelRequired");
+                .HasColumnName("Id");
+            entity.Property(e => e.Description).HasColumnName("Description");
+            entity.Property(e => e.LevelRequired).HasColumnName("LevelRequired");
             entity.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(45)
-                .HasColumnName("name");
+                .HasColumnName("Name");
             entity.Property(e => e.Price)
                 .HasPrecision(1)
-                .HasColumnName("price");
+                .HasColumnName("Price");
         });
 
         modelBuilder.Entity<User>(entity =>

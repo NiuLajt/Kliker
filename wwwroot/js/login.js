@@ -1,4 +1,13 @@
-﻿function handleLoginFormValidation() {
+﻿function handleNavigationToRegister() {
+    const registerButton = document.getElementById("register_button");
+    if (registerButton) {
+        registerButton.addEventListener("click", function () {
+            window.location.href = "/Home/Register";
+        });
+    }
+}
+
+function handleLoginFormValidation() {
     const loginForm = document.getElementById("login_form");
 
     if (loginForm) {

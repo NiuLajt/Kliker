@@ -137,7 +137,7 @@ namespace Kliker.Controllers
             return Json(new { success = true });
         }
 
-        [Authorize]
+        //[Authorize]
         public IActionResult UpgradesUnlockedAndNot()
         {
             // get all upgrades that exist in game (upgrades are manually added to database during app development, list should never be empty)

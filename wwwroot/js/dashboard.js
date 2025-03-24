@@ -3,6 +3,22 @@ let unsavedClicks = 0;
 let animationInProgress = false;
 let saveTimeout;
 
+function handleNavigationUser() {
+    const loginButton = document.getElementById("upgrades_button");
+    if (loginButton) {
+        loginButton.addEventListener("click", function () {
+            window.location.href = "/Home/Upgrades";
+        });
+    }
+
+    const registerButton = document.getElementById("achievements_button");
+    if (registerButton) {
+        registerButton.addEventListener("click", function () {
+            window.location.href = "/Home/Achievements";
+        });
+    }
+}
+
 async function fetchUserPoints() {
     try {
         const response = await fetch("/Home/UserData");

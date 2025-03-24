@@ -11,6 +11,19 @@ function playClickAnimation() {
     }, 300);
 }
 
+function handleGameplay() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/" || currentPath === "/Home/Dashboard") {
+        handleClicking();
+    }
+
+    if (currentPath == "/Home/Dashboard") {
+        updateUserData();
+        updatePointsValueInDatabase();
+    }
+}
+
 function handleClicking() {
     const currentPath = window.location.pathname;
 
@@ -27,8 +40,14 @@ function handleNavigation() {
     if (currentPath === "/") {
         handleNavigationGuest();
     } else if (currentPath === "/Home/Dashboard") {
-        //handleNavigationUser(); do zrobienia w przyszłości
+        handleNavigationUser();
         logout();
+    }
+    else if (currentPath === "/Home/Login") {
+        handleNavigationToRegister();
+    }
+    else if (currentPath === "/Home/Register") {
+        handleNavigationToLogin();
     }
 }
 
@@ -39,6 +58,17 @@ function handleValidation() {
         handleLoginFormValidation();
     } else if (currentPath === "/Home/Register") {
         handleRegisterFormValidation();
+    }
+}
+
+function handleDynamicContentLoading() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/Home/Upgrades") {
+        loadUpgrades();
+    }
+    else if (currentPath === "/Home/Achievements") {
+        // TODO :)
     }
 }
 
@@ -70,10 +100,9 @@ function handleModal() {
 
 // main program - invoke functions when everything is loaded
 document.addEventListener("DOMContentLoaded", function () {
+    handleGameplay();
     handleNavigation();
-    handleClicking();
     handleValidation();
     handleModal();
-    updateUserData();
-    updatePointsValueInDatabase();
+    handleDynamicContentLoading();
 });
