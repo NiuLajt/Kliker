@@ -77,6 +77,7 @@ input
 {
     width: auto;
     height: 100vh;
+    min-height: 100vh;
     background-color: red;
 }
 
@@ -110,6 +111,17 @@ input
     float: left;
 }
 
+#upgrades_screen
+{
+    min-height: 100vh;
+    height: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
 .panel
 {
     position: relative;
@@ -118,6 +130,7 @@ input
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    text-align: center; /*experimental*/
     flex-direction: column;
     background-color: var(--background_panel_gray);
     border-radius: 40px;
@@ -144,6 +157,23 @@ input
     margin-top: 50px;
 }
 
+#upgradesupper_panel
+{
+    width: 75%;
+    height: 225px;
+    margin-bottom: 20px;
+    background-color: var(--content_gray);
+    text-align: center;
+}
+
+#upgradeslower_panel
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
 .footer
 {
     position: absolute;
@@ -153,6 +183,17 @@ input
     color: var(--content_gray);
     font-family: Roboto;
     font-size: 12px;
+}
+
+#upgrades_footer
+{
+    position: static;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    margin-left: 200px;
+    margin-bottom: 10px;
 }
 
 
@@ -192,6 +233,13 @@ input
     width: 50%;
 }
 
+#gameinfoupgrades_header
+{
+    width: 70%;
+    margin-top: 0px;
+    color: var(--background_panel_gray);
+}
+
 #clickcount_header
 {
     margin-top: 100px;
@@ -209,6 +257,11 @@ input
     color: var(--content_gray);
     font-family: Arial;
     font-size: 16px;
+}
+
+#upgrades_header
+{
+    color: var(--accent_orange);
 }
 
 .panel_header
@@ -397,6 +450,17 @@ input
     margin: 60px auto 0px; /* Wyrównanie do środka i odstęp od tekstu */
 }
 
+.upgrades_page #home_link
+{
+    margin-top: 10px;
+    color: var(--background_panel_gray);
+}
+    .upgrades_page #home_link:hover
+    {
+        color: white;
+        transition: linear;
+    }
+
 #clickcounter
 {
     font-size: 38px;
@@ -436,6 +500,23 @@ progress
         border-radius: 10px;
     }
 
+.upgrade
+{
+    width: calc(33.333%); /*attention*/
+    height: 175px;  
+    background-color: var(--background_panel_gray);
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+    font-family: Roboto;
+    color: var(--content_gray);
+    transition: 0.2s;
+}
+    .upgrade:hover
+    {
+        background-color: #cdcdcd;
+        cursor: pointer;
+    }
 
 /* Ogólna nakładka - tło, które przesłania całą stronę */
 .modal
