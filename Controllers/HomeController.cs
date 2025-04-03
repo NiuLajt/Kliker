@@ -137,7 +137,7 @@ namespace Kliker.Controllers
             return Json(new { success = true });
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult UpgradesUnlockedAndNot()
         {
             // get all upgrades that exist in game (upgrades are manually added to database during app development, list should never be empty)
@@ -151,6 +151,29 @@ namespace Kliker.Controllers
             List<UpgradeViewModel> upgrades = _gameplayService.GetUpgradesReadyToShowOnSite(user);
 
             return Json(new { success = true, upgradesList = upgrades });
+        }
+
+        //[Authorize]
+        public IActionResult UpgradeStatus([FromBody]UpgradeStatusModel model)
+        {
+            // check if user already unlocked this upgrade
+            var usernameClaim = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" || c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
+            if (usernameClaim == null) return Json(new { success = false, errorType = "USER_NOT_FOUND__INTERNAL_COOKIES_PROBLEM" });
+
+            var username = usernameClaim.Value;
+            var user = _userService.GetUserFromDatabase(username);
+            if (_userService.UpgradeAlreadyUnlockedByUser(user.Id, model.NameOfUpgrade))
+            {
+                return Json(new { success = false, status = "ALREADY_UNLOCKED" });
+            }
+            if (user.Lvl < _gameplayService.GetRequiredLevelForUpgrade(model.NameOfUpgrade))
+            {
+                return Json(new { success = true, status = "LEVEL_TOO_LOW" });
+            }
+            if (_userService.UpgradeUnlockedByUser(user.Id, model.NameOfUpgrade))
+            {
+                return Json(new { success = true, status = "UNLOCKING_FINSIHED" });
+            }
         }
     }
 }
