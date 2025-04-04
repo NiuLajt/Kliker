@@ -1,6 +1,7 @@
 ﻿using Kliker.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace Kliker.Services
@@ -63,6 +64,12 @@ namespace Kliker.Services
             var newUser = CreateUser(model);
             _appDbContext.Users.Add(newUser);
             _appDbContext.SaveChanges();
+        }
+
+        public bool IsUpgradeAlreadyUnlockedByUser(User user, string upgradeName)
+        {
+            var upgradeByName = _appDbContext.Upgrades.FirstOrDefault(up => up.Name == upgradeName);
+            return _appDbContext.PlayersUpgrades.FirstOrDefault(row => row.UpgradeId == upgradeByName.Id && row.PlayerId == user.Id) is not null;
         }
     }
 }

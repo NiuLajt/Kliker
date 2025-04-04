@@ -55,5 +55,12 @@ namespace Kliker.Services
             }
             return upgradeViewModels;
         }
+
+        public int GetRequiredLevelForUpgrade(string upgradeName)
+        {
+            var upgrade = _appDbContext.Upgrades.FirstOrDefault(up => up.Name == upgradeName);
+            if (upgrade is null) return -1;
+            return upgrade.LevelRequired;
+        }
     }
 }

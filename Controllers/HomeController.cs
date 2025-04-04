@@ -42,6 +42,9 @@ namespace Kliker.Controllers
         [Authorize]
         public IActionResult Upgrades() { return View(); }
 
+        [Authorize]
+        public IActionResult Achievements() { return View(); }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -79,9 +82,9 @@ namespace Kliker.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim("UserId", user.Id.ToString())
+                new(ClaimTypes.Name, user.Username),
+                new(ClaimTypes.Email, user.Email),
+                new("UserId", user.Id.ToString())
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -153,27 +156,18 @@ namespace Kliker.Controllers
             return Json(new { success = true, upgradesList = upgrades });
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult UpgradeStatus([FromBody]UpgradeStatusModel model)
         {
             // check if user already unlocked this upgrade
             var usernameClaim = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" || c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
             if (usernameClaim == null) return Json(new { success = false, errorType = "USER_NOT_FOUND__INTERNAL_COOKIES_PROBLEM" });
 
-            var username = usernameClaim.Value;
-            var user = _userService.GetUserFromDatabase(username);
-            if (_userService.UpgradeAlreadyUnlockedByUser(user.Id, model.NameOfUpgrade))
-            {
-                return Json(new { success = false, status = "ALREADY_UNLOCKED" });
-            }
-            if (user.Lvl < _gameplayService.GetRequiredLevelForUpgrade(model.NameOfUpgrade))
-            {
-                return Json(new { success = true, status = "LEVEL_TOO_LOW" });
-            }
-            if (_userService.UpgradeUnlockedByUser(user.Id, model.NameOfUpgrade))
-            {
-                return Json(new { success = true, status = "UNLOCKING_FINSIHED" });
-            }
+            var user = _userService.GetUserFromDatabase(usernameClaim.Value);
+            if (_userService.IsUpgradeAlreadyUnlockedByUser(user, model.NameOfUpgrade)) return Json(new { success = false, status = "ALREADY_UNLOCKED" });
+            if (user.Lvl < _gameplayService.GetRequiredLevelForUpgrade(model.NameOfUpgrade)) return Json(new { success = true, status = "LEVEL_TOO_LOW" });
+
+            return Json(new { success = true, status = "UNLOCKING_FINSIHED" });
         }
     }
 }

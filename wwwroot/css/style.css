@@ -122,6 +122,16 @@ input
     align-items: flex-start;
 }
 
+#achievements_screen
+{
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
 .panel
 {
     position: relative;
@@ -461,6 +471,18 @@ input
         transition: linear;
     }
 
+.achievements_page #home_link
+{
+    margin-top: 10px;
+    color: var(--background_panel_gray);
+}
+
+    .achievements_page #home_link:hover
+    {
+        color: white;
+        transition: linear;
+    }
+
 #clickcounter
 {
     font-size: 38px;
@@ -517,6 +539,31 @@ progress
         background-color: #cdcdcd;
         cursor: pointer;
     }
+
+.achievement
+{
+    width: calc(33.333%); /*attention*/
+    height: 175px;
+    background-color: var(--background_panel_gray);
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+    font-family: Roboto;
+    color: var(--content_gray);
+    transition: 0.2s;
+}
+
+    .achievement:hover
+    {
+        background-color: #cdcdcd;
+        cursor: pointer;
+    }
+
+.unlocked
+{
+    background-color: var(--accent_orange);
+    color: white;
+}
 
 /* Ogólna nakładka - tło, które przesłania całą stronę */
 .modal
