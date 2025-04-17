@@ -1,4 +1,6 @@
 ﻿using Kliker.Models;
+using Kliker.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,30 +8,30 @@ namespace Kliker.Services
 {
     public class GameplayService
     {
-        private readonly AppDbContext _appDbContext;
+        private readonly AppDbContext _context;
 
         public GameplayService(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            _context = appDbContext;
         }
 
 
         public List<Upgrade> GetUpgrades()
         {
-            return _appDbContext.Upgrades.ToList();
+            return _context.Upgrades.ToList();
         }
 
         public List<Achievement> GetAchievements()
         {
-            return _appDbContext.Achievements.ToList();
+            return _context.Achievements.ToList();
         }
 
         public void UpdatePoints(UpdatePointsModel model)
         {
-            var user = _appDbContext.Users.FirstOrDefault(u => u.Username == model.Username);
+            var user = _context.Users.FirstOrDefault(u => u.Username == model.Username);
             if (user == null) return;
             user.Points = model.Points;
-            _appDbContext.SaveChanges();
+            _context.SaveChanges();
         }
 
         public List<UpgradeViewModel> GetUpgradesReadyToShowOnSite(User user)
@@ -42,7 +44,7 @@ namespace Kliker.Services
 
         public List<Upgrade> GetUpgradesUnlockedByUser(User user)
         {
-            return _appDbContext.Upgrades.Where(upgrade => upgrade.PlayersUpgrades.Any(uu => uu.PlayerId == user.Id)).ToList();
+            return _context.Upgrades.Where(upgrade => upgrade.PlayersUpgrades.Any(uu => uu.PlayerId == user.Id)).ToList();
         }
 
         private List<UpgradeViewModel> MergeAllUpgradesToViewModels(List<Upgrade> upgrades, List<Upgrade> unlockedUpgrades)
@@ -58,9 +60,22 @@ namespace Kliker.Services
 
         public int GetRequiredLevelForUpgrade(string upgradeName)
         {
-            var upgrade = _appDbContext.Upgrades.FirstOrDefault(up => up.Name == upgradeName);
+            var upgrade = _context.Upgrades.FirstOrDefault(up => up.Name == upgradeName);
             if (upgrade is null) return -1;
             return upgrade.LevelRequired;
+        }
+
+        public void HandleLevelProgression(User user)
+        {
+            int targetLevel = LevelSystemUtils.CalculateLevelByPoints(user.Points);
+            if (user.Lvl < targetLevel) LevelUp(user);
+        }
+
+        private void LevelUp(User user)
+        {
+            Console.Beep();
+            user.Lvl++;
+            _context.SaveChanges();
         }
     }
 }

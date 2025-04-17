@@ -98,7 +98,6 @@ namespace Kliker.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         { 
-            _logger.LogInformation("Próba wylogowania...");
             await HttpContext.SignOutAsync("Cookies");
             return Json(new { success = true });
         }
@@ -136,6 +135,7 @@ namespace Kliker.Controllers
             if (user == null) return Json(new { success = false, errorType = "USER_NOT_FOUND" });
 
             _gameplayService.UpdatePoints(model);
+            _gameplayService.HandleLevelProgression(user); // check if user deserves level up after updating points
 
             return Json(new { success = true });
         }
